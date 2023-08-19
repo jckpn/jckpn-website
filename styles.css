@@ -1,0 +1,129 @@
+body {
+  overflow: hidden;
+  background-color: #202022;
+}
+
+@font-face {
+  font-family: Branch;
+  src: url("Branch.otf") format("opentype");
+}
+
+.content-container {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Branch;
+  text-align: center;
+  z-index: 100;
+  width: 450px;
+  max-width: calc(100% - 8ch); /* 1 tab each side */
+  transition: all .8s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+}
+
+
+.about-container {
+  color: #ccc;
+  font-size: 18px;
+  top: 100%;
+}
+
+.about-back {
+  position: absolute;
+  cursor: pointer;
+  margin-top: 1em;
+  font-size: 80%;
+  background-color: #ffffff22;
+  width: 70px;
+  left: 50%; transform: translateX(-50%);
+}
+
+.intro-container { opacity: 1; top: 43%; pointer-events: auto; }
+.about-container { opacity: 0; bottom: 0; pointer-events: none; }
+body.show-about .intro-container { opacity: 0; top: 0; pointer-events: none; }
+body.show-about .about-container { opacity: 1; top: 50%; pointer-events: auto; }
+
+.headline {
+  display: inline-flex;
+  font-size: 58px;
+  vertical-align: middle;
+  line-height: 60px;
+  margin-bottom: 20px;
+  white-space: nowrap;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headline-pt1 {
+  margin-right: .55ch;
+  margin-top: .02em;
+  color: #999;
+  font-size: 95%;
+}
+
+.headline-pt2 {
+  color: #eee;
+}
+
+a {
+  color: #bbb;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 105%;
+  transition: all .1s ease-out;
+}
+
+a:hover {
+  transition: all .2s ease-out;
+  color: #fff;
+}
+
+.links-container a {
+  margin: 0 10px;
+  padding: 0 2px;
+}
+
+.links-container br {
+  margin-bottom: 5px;
+}
+
+.bg-container {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  overflow: hidden;
+  z-index: -1;
+  background-color: #303230;
+}
+
+.bg-wave {
+  position: fixed;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+
+}
+.bg-wave-1 {
+  animation: wave-anim 6s ease-in-out infinite;
+}
+.bg-wave-2 {
+  animation: wave-anim 8s ease-in-out infinite;
+}
+.bg-wave-1 path {
+  fill: #202022;
+}
+.bg-wave-2 path {
+  fill: #203039;
+}
+
+@keyframes wave-anim {
+    0%, 100% {
+        transform: scale(110%);
+    }
+    50% {
+        transform: scale(100%);
+    }
+}
