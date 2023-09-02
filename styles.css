@@ -20,7 +20,6 @@ body {
   transition: all .8s cubic-bezier(0.190, 1.000, 0.220, 1.000);
 }
 
-
 .about-container {
   color: #ccc;
   font-size: 18px;
@@ -40,7 +39,7 @@ body {
 .intro-container { opacity: 1; top: 43%; pointer-events: auto; }
 .about-container { opacity: 0; bottom: 0; pointer-events: none; }
 body.show-about .intro-container { opacity: 0; top: 0; pointer-events: none; }
-body.show-about .about-container { opacity: 1; top: 50%; pointer-events: auto; }
+body.show-about .about-container { opacity: 1; top: 52%; pointer-events: auto; }
 
 .headline {
   display: inline-flex;
