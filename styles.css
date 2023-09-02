@@ -30,9 +30,8 @@ body {
   position: absolute;
   cursor: pointer;
   margin-top: 1em;
-  font-size: 80%;
   background-color: #ffffff22;
-  width: 70px;
+  width: 100px;
   left: 50%; transform: translateX(-50%);
 }
 
