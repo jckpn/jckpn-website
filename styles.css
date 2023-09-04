@@ -106,12 +106,12 @@ a:hover {
 }
 
 .bg-wave-1 {
-  animation:  bg-in-1 1s cubic-bezier(.4, 1, .4, 1),
-              wave-anim 8s ease-in-out 3s infinite;
+  animation:  bg-in-1 .6s cubic-bezier(.4, 1, .4, 1),
+              wave-anim 8s ease-in-out .6s infinite;
 }
 .bg-wave-2 {
-  animation:  bg-in-2 1.5s cubic-bezier(.4, 1, .4, 1),
-              wave-anim 6s ease-in-out 3s infinite;
+  animation:  bg-in-2 1s cubic-bezier(.4, 1, .4, 1),
+              wave-anim 6s ease-in-out 1s infinite;
 }
 .bg-wave-1 path {
   fill: #202022;
@@ -121,12 +121,12 @@ a:hover {
 }
 
 @keyframes bg-in-1 {
-  0% { transform: scale(150%); }
+  0% { transform: scale(120%); }
   100% { transform: scale(100%); }
 }
 
 @keyframes bg-in-2 {
-  0% { transform: translateY(20%); }
+  0% { transform: translateY(10%); }
   100% { transform: translateY(0); }
 }
 
