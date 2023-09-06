@@ -106,12 +106,15 @@ a:hover {
 }
 
 .bg-wave-1 {
-  animation:  bg-in 1.6s cubic-bezier(0.23,1,0.32,1),
-              wave-anim 8s ease-in-out 1.6s infinite;
+  /* animation:  bg-in 1.6s cubic-bezier(0.23,1,0.32,1),
+              wave-anim 8s ease-in-out 1.6s infinite; */
+    animation: wave-anim 8s ease-in-out 1.6s infinite;
 }
 .bg-wave-2 {
-  animation:  bg-in 1.6s cubic-bezier(0.23,1,0.32,1),
-              wave-anim 6s ease-in-out 1.6s infinite;
+  /* animation:  bg-in 1.6s cubic-bezier(0.23,1,0.32,1),
+              wave-anim 6s ease-in-out 1.6s infinite; */
+    animation: wave-anim 6s ease-in-out 1.6s infinite;
+
 }
 .bg-wave-1 path {
   fill: #202022;
