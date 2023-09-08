@@ -1,3 +1,26 @@
+:root {
+    --bg-top: #2c2f2c;
+    --bg-middle: #202022;
+    --bg-bottom: #213744;
+    --normal-font-color: #ccc;
+    --i-am-color: #999;
+    --title-color: #eee;
+    --link-bg-color-1: #444;
+    --link-bg-color-2: #333;
+    --link-bg-color-hover: #444;
+    --link-color: #ccc;
+    --link-color-hover: #eee;
+    
+    /* --bg-top: rgb(250,150,100);
+    --bg-middle: rgb(240,245,255);
+    --bg-bottom: rgb(140,200,250);
+    --normal-font-color: #666;
+    --i-am-color: #888;
+    --title-color: #666;
+    --link-color: #777;
+    --link-color-hover: #555; */
+}
+
 body {
   overflow: hidden;
   background-color: #202022;
@@ -15,30 +38,33 @@ body {
   font-family: Branch;
   text-align: center;
   z-index: 100;
-  width: 450px;
-  max-width: calc(100% - 8ch); /* 1 tab each side */
-  transition: all .8s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  width: calc(100% - 8ch);
+  max-width: 540px; /* 1 tab each side */
+  transition: all .3s cubic-bezier(0, .1, 0, 1);
+  transition-delay: 0;
+}
+
+body.show-about .content-container {
+    transition-delay: .1s; /* brief 'loading' feel */
 }
 
 .about-container {
-  color: #ccc;
-  font-size: 18px;
+  color: var(--normal-font-color);
+  font-size: 19px;
   top: 100%;
 }
 
-.about-back {
+a.buttony-link.about-back {
   position: absolute;
   cursor: pointer;
-  margin-top: 1em;
-  background-color: #ffffff22;
-  width: 100px;
+  margin-top: 20px;
   left: 50%; transform: translateX(-50%);
 }
 
 .intro-container { opacity: 1; top: 43%; pointer-events: auto; }
-.about-container { opacity: 0; bottom: 0; pointer-events: none; }
-body.show-about .intro-container { opacity: 0; top: 0; pointer-events: none; }
-body.show-about .about-container { opacity: 1; top: 52%; pointer-events: auto; }
+.about-container { opacity: 0; top: 51%; pointer-events: none; }
+body.show-about .intro-container { opacity: 0; top: 33%; pointer-events: none; }
+body.show-about .about-container { opacity: 1; top: 41%; pointer-events: auto; }
 
 .headline {
   display: inline-flex;
@@ -57,31 +83,39 @@ body.show-about .about-container { opacity: 1; top: 52%; pointer-events: auto; }
 .headline-pt1 {
   margin-right: .55ch;
   margin-top: .02em;
-  color: #999;
+  color: var(--i-am-color);
   font-size: 95%;
 }
 
 .headline-pt2 {
-  color: #eee;
+  color: var(--title-color);
 }
 
 a {
-  color: #bbb;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 105%;
-  transition: all .1s ease-out;
+    color: var(--link-color);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .1s ease-out;
+
+    background: linear-gradient(to right, var(--link-bg-color-1) 0%, var(--link-bg-color-2) 50%);
+    background-position: 0 100%;
+
+    border-top-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    padding: 0 5px;
+
 }
 
 a:hover {
   transition: all .2s ease-out;
-  color: #fff;
+  color: var(--link-color-hover);
+  background: linear-gradient(to right, var(--link-bg-color-1) 0%, var(--link-bg-color-hover) 50%);
 }
 
-.links-container a {
-  margin: 0 10px;
-  padding: 0 2px;
+.buttony-link {
+  margin: 0 8px;
+  padding: 1px 11px;
+  font-size: 105%;
 }
 
 .links-container br {
@@ -93,7 +127,7 @@ a:hover {
   top: 0; left: 0; right: 0; bottom: 0;
   overflow: hidden;
   z-index: -1;
-  background-color: #303230;
+  background-color: var(--bg-top); /* actually top part of bg */
 }
 
 .bg-wave {
@@ -117,10 +151,10 @@ a:hover {
 
 }
 .bg-wave-1 path {
-  fill: #202022;
+  fill: var(--bg-middle); /* middle part of bg */
 }
 .bg-wave-2 path {
-  fill: #203039;
+  fill: var(--bg-bottom); /* bottom part of bg */
 }
 
 @keyframes bg-in {
