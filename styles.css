@@ -24,6 +24,7 @@
 body {
   overflow: hidden;
   background-color: #202022;
+  font-size: 18px;
 }
 
 @font-face {
@@ -50,7 +51,7 @@ body.show-about .content-container {
 
 .about-container {
   color: var(--normal-font-color);
-  font-size: 19px;
+  font-size: 110%;
   top: 100%;
 }
 
@@ -68,7 +69,7 @@ body.show-about .about-container { opacity: 1; top: 41%; pointer-events: auto; }
 
 .headline {
   display: inline-flex;
-  font-size: 58px;
+  font-size: 64px;
   vertical-align: middle;
   line-height: 60px;
   margin-bottom: 20px;
@@ -113,13 +114,13 @@ a:hover {
 }
 
 .buttony-link {
-  margin: 0 8px;
+  margin: 8px;
   padding: 1px 11px;
   font-size: 105%;
 }
 
 .links-container br {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .bg-container {
@@ -166,4 +167,20 @@ a:hover {
 @keyframes wave-anim {
     0%, 100% { transform: scale(100%) translate3d(0,0,0); }
     50% {  transform: scale(110%) translate3d(0,0,0); }
+}
+
+/* correct font sizes for mobile */
+
+@media (max-width: 420px) {
+    .headline { font-size: 48px; }
+    .headline-pt1 { font-size: 90%; }
+    .headline-pt2 { font-size: 100%; }
+    .buttony-link { font-size: 100%; }
+    .about-container { font-size: 100%; }
+    .links-container {
+        line-height: 2;
+        font-size: 100%;
+        width: 180px;
+        margin: 0 auto;
+    }
 }
