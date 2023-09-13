@@ -1,7 +1,7 @@
 :root {
-    --bg-top: rgb(105, 65, 40);
-    --bg-middle: rgb(30,30,30);
-    --bg-bottom: rgb(50,70,90);
+    --bg-1: rgb(80,60,90);
+    --bg-2: rgb(30,35,50);
+    --bg-3: rgb(80,90,120);
     --normal-font-color: #ccc;
     --i-am-color: #999;
     --title-color: #eee;
@@ -163,7 +163,7 @@ body.show-about .about-container { opacity: 1; top: 41%; pointer-events: auto; }
   top: 0; left: 0; right: 0; bottom: 0;
   overflow: hidden;
   z-index: -1;
-  background-color: var(--bg-top); /* actually top part of bg */
+  background-color: var(--bg-1); /* actually top part of bg */
 }
 
 .bg-wave {
@@ -175,19 +175,13 @@ body.show-about .about-container { opacity: 1; top: 41%; pointer-events: auto; }
   transition: transform 1s linear;
 }
 
-.bg-wave-1 {
-    animation: wave-anim 9s ease-in-out infinite;
-    animation-delay: -3s;
-}
-.bg-wave-2 {
-    animation: wave-anim 6s ease-in-out infinite;
-
-}
+.bg-wave-1 { animation: wave-anim 9s ease-in-out -3s infinite; }
+.bg-wave-2 { animation: wave-anim 6s ease-in-out 0s infinite; }
 .bg-wave-1 path {
-  fill: var(--bg-middle); /* middle part of bg */
+  fill: var(--bg-2);
 }
 .bg-wave-2 path {
-  fill: var(--bg-bottom); /* bottom part of bg */
+  fill: var(--bg-3);
 }
 
 @keyframes bg-in {
