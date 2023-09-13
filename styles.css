@@ -1,7 +1,7 @@
 :root {
-    --bg-1: rgb(80,60,90);
-    --bg-2: rgb(30,35,50);
-    --bg-3: rgb(80,90,120);
+    --bg-1: #3a333a;
+    --bg-2: #22222a;
+    --bg-3: #44444f;
     --normal-font-color: #ccc;
     --i-am-color: #999;
     --title-color: #eee;
