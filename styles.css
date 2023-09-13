@@ -1,7 +1,7 @@
 :root {
-    --bg-top: #2c2f2c;
-    --bg-middle: #202022;
-    --bg-bottom: #213744;
+    --bg-top: rgb(105, 65, 40);
+    --bg-middle: rgb(30,30,30);
+    --bg-bottom: rgb(50,70,90);
     --normal-font-color: #ccc;
     --i-am-color: #999;
     --title-color: #eee;
@@ -24,7 +24,7 @@
 body {
   overflow: hidden;
   background-color: #202022;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 @font-face {
@@ -45,14 +45,11 @@ body {
   transition-delay: 0;
 }
 
-body.show-about .content-container {
-    transition-delay: .1s; /* brief 'loading' feel */
-}
-
-.about-container {
-  color: var(--normal-font-color);
-  font-size: 110%;
-  top: 100%;
+.about-text {
+    font-family: sans-serif;
+    font-weight: 100;
+    color: var(--normal-font-color);
+    top: 100%;
 }
 
 a.buttony-link.about-back {
@@ -69,7 +66,7 @@ body.show-about .about-container { opacity: 1; top: 41%; pointer-events: auto; }
 
 .headline {
   display: inline-flex;
-  font-size: 64px;
+  font-size: 350%;
   vertical-align: middle;
   line-height: 60px;
   margin-bottom: 20px;
@@ -92,11 +89,53 @@ body.show-about .about-container { opacity: 1; top: 41%; pointer-events: auto; }
   color: var(--title-color);
 }
 
-a {
+
+.links-container {
+    width: 500px;
+    position: relative;
+    top: 5px;
+    left: 50%; transform: translateX(-50%);
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+
+.somewhere-link {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--link-color);
+    cursor: pointer; /* since about is not actually <a> */
+    margin: 10px 40px;
+    transition: all .5s cubic-bezier(0, .1, 0, 1);
+
+}
+
+.somewhere-link:hover {
+    color: var(--link-color-hover);
+    animation-play-state: paused;
+    text-shadow: 0 0 1px var(--link-color);
+}
+
+/* .somewhere-link { animation: floaty-links 5s ease-in-out infinite; }
+.somewhere-link:nth-child(1) { animation-delay: -1s; }
+.somewhere-link:nth-child(2) { animation-delay: -2s; }
+.somewhere-link:nth-child(3) { animation-delay: -3s; }
+.somewhere-link:nth-child(4) { animation-delay: -4s; }
+.somewhere-link:nth-child(5) { animation-delay: -5s; }
+.somewhere-link:nth-child(6) { animation-delay: -6s; }
+@keyframes floaty-links {
+    0%, 100% { transform: translateY(0) translateZ(0); }
+    50% { transform: translateY(-3px) translateZ(0); }
+} */
+
+.buttony-link {
     color: var(--link-color);
     text-decoration: none;
     cursor: pointer;
-    transition: all .1s ease-out;
+    transition: all .5s cubic-bezier(0, .1, 0, 1);
 
     background: linear-gradient(to right, var(--link-bg-color-1) 0%, var(--link-bg-color-2) 50%);
     background-position: 0 100%;
@@ -107,7 +146,7 @@ a {
 
 }
 
-a:hover {
+.buttony-link:hover {
   transition: all .2s ease-out;
   color: var(--link-color-hover);
   background: linear-gradient(to right, var(--link-bg-color-1) 0%, var(--link-bg-color-hover) 50%);
@@ -117,10 +156,6 @@ a:hover {
   margin: 8px;
   padding: 1px 11px;
   font-size: 105%;
-}
-
-.links-container br {
-    margin-bottom: 5px;
 }
 
 .bg-container {
@@ -141,14 +176,11 @@ a:hover {
 }
 
 .bg-wave-1 {
-  /* animation:  bg-in 1.6s cubic-bezier(0.23,1,0.32,1),
-              wave-anim 8s ease-in-out 1.6s infinite; */
-    animation: wave-anim 8s ease-in-out 1.6s infinite;
+    animation: wave-anim 9s ease-in-out infinite;
+    animation-delay: -3s;
 }
 .bg-wave-2 {
-  /* animation:  bg-in 1.6s cubic-bezier(0.23,1,0.32,1),
-              wave-anim 6s ease-in-out 1.6s infinite; */
-    animation: wave-anim 6s ease-in-out 1.6s infinite;
+    animation: wave-anim 6s ease-in-out infinite;
 
 }
 .bg-wave-1 path {
@@ -178,9 +210,8 @@ a:hover {
     .buttony-link { font-size: 100%; }
     .about-container { font-size: 100%; }
     .links-container {
-        line-height: 2;
         font-size: 100%;
+        margin: 0;
         width: 180px;
-        margin: 0 auto;
     }
 }
