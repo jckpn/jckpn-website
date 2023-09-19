@@ -1,0 +1,215 @@
+/* colour theme */
+$body-bg-color: rgb(255, 245, 250);
+$pink-accent: rgb(230, 150, 200);
+$header-title-color: rgba(255,255,255,90%);
+$header-contact-color: rgba(255,255,255,60%);
+
+/* shadows */
+$text-shadow-close: 0 0 2px rgba(0, 0, 0, 0.2);
+$text-shadow-medium: 0 0 4px rgba(0, 0, 0, 0.3);
+$text-shadow-far: 0 0 8px rgba(0, 0, 0, 0.4);
+
+/* anim */
+$anim-curve: cubic-bezier(.2, 1, .2, 1);
+$anim-dur-fast: .5s;
+$anim-dur-medium: 1s;
+$anim-dur-slow: 2s;
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Mooli&family=Playfair+Display&family=Poppins:wght@300&display=swap');
+
+body {
+    background-color: $body-bg-color;
+    margin: 0;
+    padding: 0;
+    font-family: 'Mooli', sans-serif;
+    transition: opacity $anim-dur-medium $anim-curve;
+
+    opacity: 0;
+    &.page-loaded { opacity: 1; }
+}
+
+$big-header-height: 340px;
+
+img.big-header-bg {
+    position: fixed;
+    left: -20px; top: -20px;
+    height: calc(#{$big-header-height} + 40px);
+    width: calc(100vw + 40px);
+    object-fit: cover;
+    object-position: 0 -50px;
+    filter: brightness(0.4) contrast(0.85) blur(1px);
+}
+
+.big-header-container {
+    position: absolute;
+    top: 0; height: $big-header-height;
+    left: 0; right: 0;
+
+    overflow: hidden;
+
+    .big-header-text {
+        position: relative;
+
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+
+        text-align: center;
+        color: $header-title-color;
+
+        .big-header-title {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: .8px;
+            font-size: 40px;
+            line-height: 48px;
+            text-shadow: $text-shadow-far;
+
+            // .header-title-pt1 {  }
+
+            .header-title-pt2 {
+                font-size: 130%;
+            }
+        }
+
+        .big-header-contact {
+            margin-top: 40px;
+            font-size: 20px;
+            text-shadow: $text-shadow-medium;
+            color: $header-contact-color;
+            font-family: 'Poppins', sans-serif;
+
+            .header-contact-mobile {
+                font-size: 95%;
+
+                img {
+                    position: relative;
+                    top: 4px;
+                    left: -1px;
+                    height: 19px;
+
+                    opacity: .6; // to match text
+                }
+            }
+
+            .header-contact-email {
+                margin-left: 16px;
+
+                img {
+                    position: relative;
+                    top: 7px;
+                    height: 26px;
+
+                    opacity: .6; // to match text
+                }
+            }
+        }
+    }
+}
+
+$navbar-height: 70px;
+$mini-navbar-height: 40px;
+
+.navbar-container {
+    position: relative;
+    top: #{$big-header-height};
+    width: 100%;
+    height: $navbar-height;
+    background-color: $pink-accent; // so when stuck, colour still in og place
+    
+    .navbar {
+        z-index: 1000;
+        position: absolute;
+        width: 100%;
+        line-height: $navbar-height;
+        background-color: $pink-accent;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        text-shadow: 0 0 5px rgba(0,0,0,30%);
+        font-size: 18px;
+        transition: all $anim-dur-medium $anim-curve;
+
+        a {
+            margin: 0 30px;
+            padding: 5px 10px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: background $anim-dur-fast $anim-curve;
+
+            &:hover {
+                background: rgba(255,255,255,20%);
+            }
+        }
+
+        .navbar-contact {
+            display: none; // only show when stuck
+        }
+    
+        // this is a smaller navbar element which jquery makes visible after scrolling
+        // past the 'main' navbar
+        &.stuck {
+            text-align: center;
+            position: fixed;
+            top: 0;
+            height: $mini-navbar-height;
+            line-height: $mini-navbar-height;
+            display: inline-block;
+
+            animation: stuck-navbar-intro $anim-dur-fast $anim-curve forwards;
+
+            a {
+                margin: 0 10px;
+            }
+
+            .navbar-contact {
+                position: relative;
+                display: inline;
+                color: #fff;
+                font-size: 95%;
+                width: 200px;
+                margin-left: 150px;
+                margin-right: 15px;
+
+                img {
+                    position: relative;
+                    left: -2px;
+                    top: 2px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes stuck-navbar-intro {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-container {
+    position: relative;
+    top: calc(#{$big-header-height} - 21px); // idk why -21px needed??
+    width: 100%;
+    background-image: url('./assets/subtle-prism.svg');
+    transition: background-position $anim-dur-slow $anim-curve;
+    padding-bottom: 100px;
+    
+    
+    .content-section {
+        position: relative;
+        margin: 20px auto;
+        height: fit-content;
+        top: 40px;
+        width: 100%;
+        max-width: 680px;
+
+        h1 {
+            
+        }
+    }
+}
