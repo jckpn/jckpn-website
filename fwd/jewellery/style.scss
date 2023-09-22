@@ -14,8 +14,9 @@ $footer-color: rgb(245, 237, 242);
 
 /* shadows */
 $shadow-close: 0 0 4px rgba(0, 0, 0, 0.2);
-$shadow-medium: 0 0 7px rgba(0, 0, 0, 0.3);
-$shadow-far: 0 0 10px rgba(0, 0, 0, 0.4);
+$shadow-medium: 0 0 6px rgba(0, 0, 0, 0.4);
+$shadow-far: 0 0 8px rgba(0, 0, 0, 0.6);
+$shadow-really-far: 0 0 10px rgba(0, 0, 0, .8);
 
 /* anim */
 $anim-curve: cubic-bezier(.2, 1, .2, 1);
@@ -73,7 +74,7 @@ img.big-header-bg {
             letter-spacing: .8px;
             font-size: 40px;
             line-height: 48px;
-            text-shadow: $shadow-medium;
+            text-shadow: $shadow-really-far;
 
             // .header-title-pt1 {  }
 
@@ -421,6 +422,35 @@ $content-width: 700px;
 
 // mobile styles
 @media only screen and (max-width: 700px) {
+    .navbar-container {
+        .navbar {
+            &.stuck {
+                text-align: left;
+                padding: 0 15px;
+
+                a {
+                    margin: 0;
+                    font-size: 17px;
+                }
+
+                .navbar-contact {
+                    position: absolute;
+                    top: 5px;
+                    right: 23px;
+                    width: 30px;
+                    font-size: 0;
+
+                    img {
+                        position: relative;
+                        top: 4px;
+                        width: 17px;
+                        height: 17px;
+                    }
+                }
+            }
+        }
+    }
+
     .header-contact-mobile {
         display: block;
 
@@ -475,7 +505,6 @@ $mobile-navbar-height: 50px;
             .big-header-title {
                 font-size: 32px;
                 line-height: 40px;
-                text-shadow: $shadow-medium;
 
                 // .header-title-pt1 {  }
 
@@ -492,13 +521,19 @@ $mobile-navbar-height: 50px;
         }
 
         .header-contact-mobile {
-            background-color: rgba(255,255,255,20%);
+            background-color: rgba($grey-accent, 20%);
+            opacity: .9;
+            color: #fff;
             padding: 5px 12px;
             border-radius: 99px;
             display: inline;
             cursor: pointer;
             box-shadow: $shadow-medium;
-            text-shadow: $shadow-medium;
+            text-shadow: $shadow-really-far;
+
+            img {
+                opacity: .8 !important;
+            }
         }
     }
 
@@ -514,33 +549,6 @@ $mobile-navbar-height: 50px;
                 margin: 0 auto;
                 padding: 5px 10px;
             }
-        
-            // this is a smaller navbar element which jquery makes visible after scrolling
-            // past the 'main' navbar
-            &.stuck {
-                text-align: left;
-                padding: 0 15px;
-
-                a {
-                    margin: 0;
-                    font-size: 17px;
-                }
-
-                .navbar-contact {
-                    position: absolute;
-                    top: 5px;
-                    right: 23px;
-                    width: 30px;
-                    font-size: 0;
-    
-                    img {
-                        position: relative;
-                        top: 4px;
-                        width: 17px;
-                        height: 17px;
-                    }
-                }
-            }
         }
     }
 
@@ -554,7 +562,7 @@ $mobile-navbar-height: 50px;
                 position: relative;
                 margin: 20px auto;
                 width: 100%;
-                height: 400px;
+                height: 360px;
                 display: block;
 
                 .img-wrapper {
@@ -572,7 +580,7 @@ $mobile-navbar-height: 50px;
                     position: absolute;
                     width: 100%;
                     top: 200px;
-                    height: 200px;
+                    height: 160px;
 
                     h2 {
                         margin: 20px auto;

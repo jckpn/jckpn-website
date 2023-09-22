@@ -58,7 +58,7 @@ img.big-header-bg {
   letter-spacing: 0.8px;
   font-size: 40px;
   line-height: 48px;
-  text-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 .big-header-container .big-header-text .big-header-title .header-title-pt2 {
   font-size: 130%;
@@ -66,7 +66,7 @@ img.big-header-bg {
 .big-header-container .big-header-text .big-header-contact {
   margin-top: 40px;
   font-size: 20px;
-  text-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
   color: rgba(255, 255, 255, 0.6);
 }
 .big-header-container .big-header-text .big-header-contact .header-contact-mobile {
@@ -133,7 +133,7 @@ img.big-header-bg {
   height: 42px;
   line-height: 42px;
   display: inline-block;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
   animation: stuck-navbar-intro 0.5s cubic-bezier(0.2, 1, 0.2, 1) forwards;
 }
 .navbar-container .navbar.stuck a {
@@ -260,7 +260,7 @@ img.big-header-bg {
 }
 .content-container .img-wrapper {
   position: relative;
-  box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
   border-radius: 5px;
   overflow: hidden;
   cursor: pointer;
@@ -320,6 +320,27 @@ img.big-header-bg {
 }
 
 @media only screen and (max-width: 700px) {
+  .navbar-container .navbar.stuck {
+    text-align: left;
+    padding: 0 15px;
+  }
+  .navbar-container .navbar.stuck a {
+    margin: 0;
+    font-size: 17px;
+  }
+  .navbar-container .navbar.stuck .navbar-contact {
+    position: absolute;
+    top: 5px;
+    right: 23px;
+    width: 30px;
+    font-size: 0;
+  }
+  .navbar-container .navbar.stuck .navbar-contact img {
+    position: relative;
+    top: 4px;
+    width: 17px;
+    height: 17px;
+  }
   .header-contact-mobile {
     display: block;
   }
@@ -364,7 +385,6 @@ img.big-header-bg {
   .big-header-container .big-header-text .big-header-title {
     font-size: 32px;
     line-height: 40px;
-    text-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
   }
   .big-header-container .big-header-text .big-header-title .header-title-pt2 {
     font-size: 130%;
@@ -373,13 +393,18 @@ img.big-header-bg {
     display: none;
   }
   .big-header-contact .header-contact-mobile {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(226, 226, 226, 0.2);
+    opacity: 0.9;
+    color: #fff;
     padding: 5px 12px;
     border-radius: 99px;
     display: inline;
     cursor: pointer;
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
-    text-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  }
+  .big-header-contact .header-contact-mobile img {
+    opacity: 0.8 !important;
   }
   .navbar-container {
     height: 50px;
@@ -393,27 +418,6 @@ img.big-header-bg {
     margin: 0 auto;
     padding: 5px 10px;
   }
-  .navbar-container .navbar.stuck {
-    text-align: left;
-    padding: 0 15px;
-  }
-  .navbar-container .navbar.stuck a {
-    margin: 0;
-    font-size: 17px;
-  }
-  .navbar-container .navbar.stuck .navbar-contact {
-    position: absolute;
-    top: 5px;
-    right: 23px;
-    width: 30px;
-    font-size: 0;
-  }
-  .navbar-container .navbar.stuck .navbar-contact img {
-    position: relative;
-    top: 4px;
-    width: 17px;
-    height: 17px;
-  }
   .content-container {
     padding: 25px 0;
   }
@@ -424,7 +428,7 @@ img.big-header-bg {
     position: relative;
     margin: 20px auto;
     width: 100%;
-    height: 400px;
+    height: 360px;
     display: block;
   }
   .content-container .content-section .section-imgad .img-wrapper, .content-container .content-section .section-imgad-right .img-wrapper {
@@ -440,7 +444,7 @@ img.big-header-bg {
     position: absolute;
     width: 100%;
     top: 200px;
-    height: 200px;
+    height: 160px;
   }
   .content-container .content-section .section-imgad .imgad-text h2, .content-container .content-section .section-imgad-right .imgad-text h2 {
     margin: 20px auto;
