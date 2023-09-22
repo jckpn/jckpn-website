@@ -32,6 +32,14 @@ $(function() {
     $('.email-click').click(function() {
         window.open('mailto:pamperpartiesoxfordshire@gmail.com');
     });
+
+    // add click to navbar buttons - smoothly scroll to section
+    $('.navbar a').click(function() {
+        var section = $(this).attr('href');
+        $('html, body').animate({
+            scrollTop: $(section).offset().top - 25
+        }, 500);
+    });
 });
 
 $(window).on("load", () => {
