@@ -390,7 +390,7 @@ img.big-header-bg {
     font-size: 18px;
   }
   .navbar-container .navbar a {
-    margin: 0 15px;
+    margin: 0 auto;
     padding: 5px 10px;
   }
   .navbar-container .navbar.stuck {
@@ -404,20 +404,51 @@ img.big-header-bg {
   .navbar-container .navbar.stuck .navbar-contact {
     position: absolute;
     top: 5px;
-    right: 30px;
+    right: 23px;
     width: 30px;
     font-size: 0;
   }
   .navbar-container .navbar.stuck .navbar-contact img {
     position: relative;
     top: 4px;
-    width: 21px;
-    height: 21px;
+    width: 17px;
+    height: 17px;
   }
   .content-container {
     padding: 25px 0;
   }
   .content-container .content-section {
-    margin: 0 15px;
+    margin: 0;
+  }
+  .content-container .content-section .section-imgad, .content-container .content-section .section-imgad-right {
+    position: relative;
+    margin: 20px auto;
+    width: 100%;
+    height: 400px;
+    display: block;
+  }
+  .content-container .content-section .section-imgad .img-wrapper, .content-container .content-section .section-imgad-right .img-wrapper {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 200px;
+    margin: 0 auto;
+    margin-left: 0 !important;
+    cursor: pointer;
+  }
+  .content-container .content-section .section-imgad .imgad-text, .content-container .content-section .section-imgad-right .imgad-text {
+    position: absolute;
+    width: 100%;
+    top: 200px;
+    height: 200px;
+  }
+  .content-container .content-section .section-imgad .imgad-text h2, .content-container .content-section .section-imgad-right .imgad-text h2 {
+    margin: 20px auto;
+    text-align: center !important;
+    font-size: 21px;
+  }
+  .content-container .content-section .section-imgad .imgad-text p, .content-container .content-section .section-imgad-right .imgad-text p {
+    text-align: center !important;
+    font-size: 16px;
   }
 }/*# sourceMappingURL=style.css.map */
