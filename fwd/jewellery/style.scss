@@ -10,6 +10,7 @@ $h1-color: #222;
 $h2-color: #333;
 $p-color: #444;
 $disclaimer-color: #888;
+$footer-color: rgb(245, 237, 242);
 
 /* shadows */
 $shadow-close: 0 0 4px rgba(0, 0, 0, 0.2);
@@ -402,7 +403,7 @@ $content-width: 700px;
         position: absolute;
         left: 0; right: 0;
         bottom: 0; height: 24px;
-        background-color: $grey-accent;
+        background-color: $footer-color;
         font-size: 13px;
         line-height: 20px;
         text-align: center;
