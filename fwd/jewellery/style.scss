@@ -1,0 +1,553 @@
+/* colour theme */
+$body-bg-color: rgb(255, 247, 252); // mild pink
+$header-title-color: rgba(255,255,255,90%);
+$header-contact-color: rgba(255,255,255,60%);
+$grey-accent: #e2e2e2;
+$pink-accent: rgb(240, 150, 200);
+$pink-accent-lighter: rgba($pink-accent, 50%);
+$pink-accent-lightest: rgba($pink-accent, 25%);
+$h1-color: #222;
+$h2-color: #333;
+$p-color: #444;
+$disclaimer-color: #888;
+
+/* shadows */
+$shadow-close: 0 0 4px rgba(0, 0, 0, 0.2);
+$shadow-medium: 0 0 7px rgba(0, 0, 0, 0.3);
+$shadow-far: 0 0 10px rgba(0, 0, 0, 0.4);
+
+/* anim */
+$anim-curve: cubic-bezier(.2, 1, .2, 1);
+$anim-dur-fast: .5s;
+$anim-dur-medium: 1s;
+$anim-dur-slow: 2s;
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Mooli&family=Playfair+Display&family=Poppins:wght@300&display=swap');
+
+body { font-family: 'Mooli', sans-serif; }
+.big-header-title { font-family: 'Playfair Display', serif; }
+.big-header-contact, .footer-text { font-family: 'Poppins', sans-serif; }
+
+body {
+    background-color: $body-bg-color;
+    margin: 0;
+    padding: 0;
+    transition: opacity $anim-dur-medium $anim-curve;
+
+    background-color: $grey-accent; // only really shows when overscrolling on mac
+
+    opacity: 0;
+    &.page-loaded { opacity: 1; }
+}
+
+$big-header-height: 400px;
+
+img.big-header-bg {
+    position: fixed;
+    left: -20px; top: -20px;
+    height: calc(#{$big-header-height} + 40px);
+    width: calc(100vw + 40px);
+    object-fit: cover;
+    filter: brightness(0.4) contrast(0.85) blur(1px);
+}
+
+.big-header-container {
+    position: absolute;
+    top: 0; height: $big-header-height;
+    left: 0; right: 0;
+
+    overflow: hidden;
+
+    .big-header-text {
+        position: relative;
+
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+
+        text-align: center;
+        color: $header-title-color;
+
+        .big-header-title {
+            letter-spacing: .8px;
+            font-size: 40px;
+            line-height: 48px;
+            text-shadow: $shadow-medium;
+
+            // .header-title-pt1 {  }
+
+            .header-title-pt2 {
+                font-size: 130%;
+            }
+        }
+
+        .big-header-contact {
+            margin-top: 40px;
+            font-size: 20px;
+            text-shadow: $shadow-medium;
+            color: $header-contact-color;
+
+            .header-contact-mobile {
+                position: relative;
+                font-size: 95%;
+                top: 2px;
+
+                img {
+                    position: relative;
+                    top: 2.5px;
+                    left: -1px;
+                    height: 19px;
+
+                    opacity: .6; // to match text
+                }
+            }
+
+            .header-contact-email {
+                margin-left: 16px;
+
+                img {
+                    position: relative;
+                    top: 7px;
+                    height: 26px;
+
+                    opacity: .6; // to match text
+                }
+            }
+        }
+    }
+}
+
+$navbar-height: 70px;
+$mini-navbar-height: 42px;
+
+.navbar-container {
+    position: relative;
+    top: #{$big-header-height};
+    width: 100%;
+    height: $navbar-height;
+    background-color: $pink-accent; // so when stuck, colour still in og place
+    
+    .navbar {
+        z-index: 1000;
+        position: absolute;
+        width: 100%;
+        line-height: $navbar-height;
+        padding-bottom: 2px;
+        background-color: $pink-accent;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        text-shadow: 0 0 5px rgba(0,0,0,30%);
+        font-size: 18px;
+        transition: all $anim-dur-medium $anim-curve;
+        box-shadow: $shadow-close;
+
+        a {
+            margin: 0 30px;
+            padding: 5px 10px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: background $anim-dur-fast $anim-curve;
+
+            &:hover {
+                background: rgba(255,255,255,20%);
+            }
+        }
+
+        .navbar-contact {
+            display: none; // only show when stuck
+        }
+    
+        // this is a smaller navbar element which jquery makes visible after scrolling
+        // past the 'main' navbar
+        &.stuck {
+            text-align: center;
+            position: fixed;
+            top: 0;
+            height: $mini-navbar-height;
+            line-height: $mini-navbar-height;
+            display: inline-block;
+            box-shadow: $shadow-far;
+
+            animation: stuck-navbar-intro $anim-dur-fast $anim-curve forwards;
+
+            a {
+                margin: 0 10px;
+            }
+
+            .navbar-contact {
+                position: relative;
+                display: inline;
+                color: #fff;
+                font-size: 95%;
+                width: 200px;
+                margin-left: 150px;
+                margin-right: 15px;
+
+                img {
+                    position: relative;
+                    left: -2px;
+                    top: 2px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes stuck-navbar-intro {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+$content-width: 700px;
+
+.content-container {
+    position: relative;
+    top: calc(#{$big-header-height} - 21px); // idk why -21px needed??
+    width: 100%;
+    background-color: $body-bg-color;
+    transition: background-position $anim-dur-slow $anim-curve;
+    padding: 50px 0;
+
+    a {
+        color: #ff44ee;
+    }
+    
+    .content-section {
+        position: relative;
+        margin: 0 50px;
+        height: fit-content;
+        width: auto;
+        padding: 40px 30px;
+
+        & + .content-section {
+            border-top: 1px solid $grey-accent;
+        }
+
+        .section-img {
+            position: relative;
+            display: inline;
+            width: 49%;
+            border-radius: 4px;
+            box-shadow: $shadow-close;
+        }
+
+            // &.section-img {
+            //     position: absolute;
+            //     top: 0;
+            //     right: 0;
+            //     width: 40%;
+            //     height: 100%;
+
+            //     & + .section-text {
+            //         margin-right: 45%;
+            //     }
+
+            //     &.section-img-left {
+            //         left: 0;
+
+            //         & + .section-text {
+            //             margin-right: 0;
+            //             margin-left: 45%;
+            //         }
+            //     }
+            // }
+
+        .section-text {
+            position: relative;
+            max-width: $content-width;
+            margin: 0 auto;
+
+            text-align: left;
+            font-size: 17px;
+
+            h1 {
+                position: relative;
+                z-index: 10;
+                font-weight: 100;
+                font-size: 32px;
+                display: inline;
+            }
+
+            p {
+                text-align: justify;
+            }
+
+            .floating-img {
+                position: relative;
+                width: 40%;
+                height: 100%;
+                float: right;
+                margin: 5%;
+                border-radius: 5px;
+                box-shadow: $shadow-close;
+
+                &.floating-img-left {
+                    float: left;
+                }
+            }
+
+            // floating shapes
+            // &::before, &::after {
+            //     position: absolute;
+            //     width: 60px;
+            //     height: 60px;
+            //     border-radius: 45% 55% 45% 55% / 55% 45% 55% 45%;
+            //     box-shadow: $shadow-close;
+            //     background-color: $pink-accent;
+
+            //     content: '';
+            // }
+            // &::after {
+            //     top: 35%;
+            //     left: -30px;
+            // }
+            // &::before {
+            //     top: 75%;
+            //     right: -30px;
+            // }
+        }
+
+        .section-imgad {
+            position: relative;
+            display: inline-flex;
+            width: auto;
+            margin: 25px;
+            height: 200px;
+
+            .img-wrapper {
+                width: 45%;
+                height: 200px;
+                margin-right: 35px;
+
+                cursor: pointer; // click functionality added in js
+            }
+
+            .imgad-text {
+                p { text-align: left; }
+                width: 50%;
+
+                h2 {
+                    font-size: 24px;
+                    margin-bottom: 10px;
+                    font-weight: normal;
+                    width: fit-content;
+                }
+            }
+
+            &.section-imgad-right {
+                .img-wrapper {
+                    margin-right: 0;
+                    margin-left: 30px;
+                }
+
+                .imgad-text {
+                    p { text-align: right; }
+                    h2 { margin-left: auto; }
+                }
+            }
+        }
+    }
+
+    .img-wrapper {
+        position: relative;
+        box-shadow: $shadow-medium;
+        border-radius: 5px;
+        overflow: hidden;
+
+        cursor: pointer; // click functionality added in js
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &::after {
+            position: absolute;
+            bottom: 7px;
+            right: 7px;
+            width: 22px;
+            height: 22px;
+            background-image: url('./assets/expand-image-icon.svg');
+            background-size: cover;
+            opacity: .5;
+            transition: opacity $anim-dur-fast $anim-curve;
+            pointer-events: none; // allow click through to img
+
+            content: '';
+        }
+
+        &:hover::after {
+            opacity: .8;
+        }
+    }
+
+    // highlighter effect
+    h1 {
+        background: url(//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=ffddff);
+        background-size: 100% 90%;
+        background-repeat: no-repeat;
+        padding: 4px 16px 9px 12px;
+        margin-left: -12px;
+    }
+
+    .content-footer {
+        position: absolute;
+        left: 0; right: 0;
+        bottom: 0; height: 24px;
+        background-color: $grey-accent;
+        font-size: 13px;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    h1 { color: $h1-color; }
+    h2 { color: $h2-color; }
+    p { color: $p-color; }
+
+    .disclaimer {
+        font-size: 90%;
+        color: $disclaimer-color;
+    }
+}
+
+// mobile styles
+@media only screen and (max-width: 700px) {
+    .header-contact-mobile {
+        display: block;
+
+        img {
+            margin-top: -2px; // TODO:
+        }
+    }
+    .content-container {
+        .content-section {
+            .section-imgad, .section-imgad-right {
+                position: relative;
+                margin: 20px auto;
+                width: 80%;
+                height: 380px;
+                display: block;
+
+                .img-wrapper {
+                    position: absolute;
+                    width: 100%;
+                    top: 0;
+                    height: 200px;
+                    margin: 0 auto;
+                    margin-left: 0 !important;
+
+                    cursor: pointer; // click functionality added in js
+                }
+
+                .imgad-text {
+                    position: absolute;
+                    width: 100%;
+                    top: 200px;
+                    height: 180px;
+
+                    h2 { margin: 20px auto; text-align: center !important; }
+                    p { text-align: center !important; }
+                    
+                }
+            }
+        }
+    }
+}
+
+.phone-click, .email-click {
+    cursor: pointer; // click functionality added in js
+}
+
+$mobile-navbar-height: 50px;
+
+@media only screen and (max-width: 550px) {
+    .big-header-container {
+        .big-header-text {
+            .big-header-title {
+                font-size: 32px;
+                line-height: 40px;
+                text-shadow: $shadow-medium;
+
+                // .header-title-pt1 {  }
+
+                .header-title-pt2 {
+                    font-size: 130%;
+                }
+            }
+        }
+    }
+
+    .big-header-contact {
+        .header-contact-email {
+            display: none;
+        }
+
+        .header-contact-mobile {
+            background-color: rgba(255,255,255,20%);
+            padding: 5px 12px;
+            border-radius: 99px;
+            display: inline;
+            cursor: pointer;
+            box-shadow: $shadow-medium;
+            text-shadow: $shadow-medium;
+        }
+    }
+
+    .navbar-container {
+        height: $mobile-navbar-height;
+
+        .navbar {
+            height: $mobile-navbar-height;
+            line-height: calc(#{$mobile-navbar-height} + 2px);
+            font-size: 18px;
+    
+            a {
+                margin: 0 15px;
+                padding: 5px 10px;
+            }
+        
+            // this is a smaller navbar element which jquery makes visible after scrolling
+            // past the 'main' navbar
+            &.stuck {
+                text-align: left;
+                padding: 0 15px;
+
+                a {
+                    margin: 0;
+                    font-size: 17px;
+                }
+
+                .navbar-contact {
+                    position: absolute;
+                    top: 5px;
+                    right: 30px;
+                    width: 30px;
+                    font-size: 0;
+    
+                    img {
+                        position: relative;
+                        top: 4px;
+                        width: 21px;
+                        height: 21px;
+                    }
+                }
+            }
+        }
+    }
+
+    .content-container {
+        padding: 25px 0;
+
+        .content-section {
+            margin: 0 15px;
+        }
+    }
+}
