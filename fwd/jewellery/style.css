@@ -15,6 +15,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+html {
+  font-size: 18px;
+}
+
 body {
   background-color: rgb(255, 247, 252);
   margin: 0;
@@ -56,7 +60,7 @@ img.big-header-bg {
 }
 .big-header-container .big-header-text .big-header-title {
   letter-spacing: 0.8px;
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 48px;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
@@ -65,7 +69,7 @@ img.big-header-bg {
 }
 .big-header-container .big-header-text .big-header-contact {
   margin-top: 40px;
-  font-size: 20px;
+  font-size: 1.25rem;
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
   color: rgba(255, 255, 255, 0.6);
 }
@@ -108,7 +112,7 @@ img.big-header-bg {
   text-align: center;
   font-family: "Poppins", sans-serif;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  font-size: 18px;
+  font-size: 1.1rem;
   transition: all 1s cubic-bezier(0.2, 1, 0.2, 1);
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
@@ -172,6 +176,9 @@ img.big-header-bg {
   transition: background-position 2s cubic-bezier(0.2, 1, 0.2, 1);
   padding: 50px 0;
 }
+.content-container * {
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
+}
 .content-container a {
   color: #ff44ee;
 }
@@ -195,16 +202,16 @@ img.big-header-bg {
 }
 .content-container .content-section .section-text {
   position: relative;
-  max-width: 700px;
+  max-width: 760px;
   margin: 0 auto;
   text-align: left;
-  font-size: 17px;
+  font-size: 1rem;
 }
 .content-container .content-section .section-text h1 {
   position: relative;
   z-index: 10;
   font-weight: 100;
-  font-size: 32px;
+  font-size: 2rem;
   display: inline;
 }
 .content-container .content-section .section-text p {
@@ -242,7 +249,7 @@ img.big-header-bg {
   text-align: left;
 }
 .content-container .content-section .section-imgad .imgad-text h2 {
-  font-size: 24px;
+  font-size: 1.5rem;
   margin-bottom: 10px;
   font-weight: normal;
   width: -moz-fit-content;
@@ -301,7 +308,7 @@ img.big-header-bg {
   bottom: 0;
   height: 24px;
   background-color: rgb(245, 237, 242);
-  font-size: 13px;
+  font-size: 0.8rem;
   line-height: 20px;
   text-align: center;
 }
@@ -326,7 +333,7 @@ img.big-header-bg {
   }
   .navbar-container .navbar.stuck a {
     margin: 0;
-    font-size: 17px;
+    font-size: 1rem;
   }
   .navbar-container .navbar.stuck .navbar-contact {
     position: absolute;
@@ -381,13 +388,13 @@ img.big-header-bg {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 550px) {
-  .big-header-container .big-header-text .big-header-title {
-    font-size: 32px;
-    line-height: 40px;
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 16px;
   }
-  .big-header-container .big-header-text .big-header-title .header-title-pt2 {
-    font-size: 130%;
+  .big-header-container .big-header-text .big-header-title {
+    font-size: 2rem;
+    line-height: 40px;
   }
   .big-header-contact .header-contact-email {
     display: none;
@@ -412,7 +419,7 @@ img.big-header-bg {
   .navbar-container .navbar {
     height: 50px;
     line-height: calc(50px + 2px);
-    font-size: 18px;
+    font-size: 1.1rem;
   }
   .navbar-container .navbar a {
     margin: 0 auto;
@@ -430,6 +437,7 @@ img.big-header-bg {
     width: 100%;
     height: 360px;
     display: block;
+    max-width: 400px;
   }
   .content-container .content-section .section-imgad .img-wrapper, .content-container .content-section .section-imgad-right .img-wrapper {
     position: absolute;
@@ -449,10 +457,10 @@ img.big-header-bg {
   .content-container .content-section .section-imgad .imgad-text h2, .content-container .content-section .section-imgad-right .imgad-text h2 {
     margin: 20px auto;
     text-align: center !important;
-    font-size: 21px;
+    font-size: 1.3rem;
   }
   .content-container .content-section .section-imgad .imgad-text p, .content-container .content-section .section-imgad-right .imgad-text p {
     text-align: center !important;
-    font-size: 16px;
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=style.css.map */
