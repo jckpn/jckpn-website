@@ -430,6 +430,16 @@ $content-width: 760px;
 
 // mobile styles
 @media only screen and (max-width: 700px) {
+    .big-header-container {
+        .big-header-text {
+            .big-header-title {
+                // font-size: 2rem;
+                font-size: calc(1rem + 3vw);
+                line-height: 40px;
+            }
+        }
+    }
+
     .navbar-container {
         .navbar {
             &.stuck {
@@ -510,15 +520,6 @@ $mobile-navbar-height: 50px;
 @media only screen and (max-width: 600px) {
     html {
         font-size: 16px;
-    }
-
-    .big-header-container {
-        .big-header-text {
-            .big-header-title {
-                font-size: 2rem;
-                line-height: 40px;
-            }
-        }
     }
 
     .big-header-contact {

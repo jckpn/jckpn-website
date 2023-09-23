@@ -327,6 +327,10 @@ img.big-header-bg {
 }
 
 @media only screen and (max-width: 700px) {
+  .big-header-container .big-header-text .big-header-title {
+    font-size: calc(1rem + 3vw);
+    line-height: 40px;
+  }
   .navbar-container .navbar.stuck {
     text-align: left;
     padding: 0 15px;
@@ -391,10 +395,6 @@ img.big-header-bg {
 @media only screen and (max-width: 600px) {
   html {
     font-size: 16px;
-  }
-  .big-header-container .big-header-text .big-header-title {
-    font-size: 2rem;
-    line-height: 40px;
   }
   .big-header-contact .header-contact-email {
     display: none;
