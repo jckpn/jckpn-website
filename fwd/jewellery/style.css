@@ -138,7 +138,15 @@ img.big-header-bg {
   line-height: 42px;
   display: inline-block;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
-  animation: stuck-navbar-intro 0.5s cubic-bezier(0.2, 1, 0.2, 1) forwards;
+  font-size: 1rem;
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
+  opacity: 0;
+  transform: translateY(-100%);
+}
+.navbar-container .navbar.stuck.visible {
+  transition: all 1s cubic-bezier(0.2, 1, 0.2, 1);
+  opacity: 1;
+  transform: translateY(0);
 }
 .navbar-container .navbar.stuck a {
   margin: 0 10px;
@@ -158,23 +166,13 @@ img.big-header-bg {
   top: 2px;
 }
 
-@keyframes stuck-navbar-intro {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 .content-container {
   position: relative;
   top: calc(400px - 21px);
   width: 100%;
   background-color: rgb(255, 247, 252);
   transition: background-position 2s cubic-bezier(0.2, 1, 0.2, 1);
-  padding: 50px 0;
+  padding: 50px 0 100px 0;
 }
 .content-container * {
   transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
@@ -306,10 +304,9 @@ img.big-header-bg {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 24px;
   background-color: rgb(245, 237, 242);
   font-size: 0.8rem;
-  line-height: 20px;
+  padding: 10px;
   text-align: center;
 }
 .content-container h1 {
@@ -352,10 +349,13 @@ img.big-header-bg {
     width: 17px;
     height: 17px;
   }
-  .header-contact-mobile {
+  .big-header-contact {
+    font-size: 1.2rem !important;
+  }
+  .big-header-contact .header-contact-mobile {
     display: block;
   }
-  .header-contact-mobile img {
+  .big-header-contact .header-contact-mobile img {
     margin-top: -2px;
   }
   .content-container .content-section .section-imgad, .content-container .content-section .section-imgad-right {
@@ -409,6 +409,7 @@ img.big-header-bg {
     cursor: pointer;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    font-size: 1.35rem !important;
   }
   .big-header-contact .header-contact-mobile img {
     opacity: 0.8 !important;

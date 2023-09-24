@@ -1,6 +1,9 @@
 $(function() {
-    // image scroll parallax
-    navbarTriggerY = $('.navbar-container').offset().top + $('.navbar-container').height(); // 40 is height of stuck navbar
+    navbarTriggerY = $('.navbar-container').offset().top
+        + $('.navbar-container').height() - 40; // 40 is height of stuck navbar
+
+    // clone navbar and add it to the bottom of the page
+    $('.navbar').clone().appendTo('.navbar-container').addClass('stuck');
 
     $(window).scroll(function() {
         var wScroll = $(this).scrollTop();
@@ -10,10 +13,11 @@ $(function() {
         // });
 
         if (wScroll > navbarTriggerY) {
-            $('.navbar').addClass('stuck');
+            $('.navbar.stuck').addClass('visible');
         } else {
-            $('.navbar').removeClass('stuck');
+            $('.navbar.stuck').removeClass('visible');
 
+            // header image parallax effect
             $('img.big-header-bg').css({
                 'transform' : 'translateY(' + -wScroll/5 + 'px)'
             });

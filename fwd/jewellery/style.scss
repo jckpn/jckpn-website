@@ -174,8 +174,17 @@ $mini-navbar-height: 42px;
             line-height: $mini-navbar-height;
             display: inline-block;
             box-shadow: $shadow-far;
+            font-size: 1rem;
 
-            animation: stuck-navbar-intro $anim-dur-fast $anim-curve forwards;
+            transition: all $anim-dur-fast $anim-curve;
+            opacity: 0;
+            transform: translateY(-100%);
+
+            &.visible {
+                transition: all $anim-dur-medium $anim-curve;
+                opacity: 1;
+                transform: translateY(0);
+            }
 
             a {
                 margin: 0 10px;
@@ -200,17 +209,6 @@ $mini-navbar-height: 42px;
     }
 }
 
-@keyframes stuck-navbar-intro {
-    0% {
-        opacity: 0;
-        transform: translateY(-100%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 $content-width: 760px;
 
 .content-container {
@@ -219,7 +217,7 @@ $content-width: 760px;
     width: 100%;
     background-color: $body-bg-color;
     transition: background-position $anim-dur-slow $anim-curve;
-    padding: 50px 0;
+    padding: 50px 0 100px 0;
 
     * {
         transition: all $anim-dur-fast $anim-curve;
@@ -411,10 +409,10 @@ $content-width: 760px;
     .content-footer {
         position: absolute;
         left: 0; right: 0;
-        bottom: 0; height: 24px;
+        bottom: 0;
         background-color: $footer-color;
         font-size: .8rem;
-        line-height: 20px;
+        padding: 10px;
         text-align: center;
     }
 
@@ -469,11 +467,15 @@ $content-width: 760px;
         }
     }
 
-    .header-contact-mobile {
-        display: block;
+    .big-header-contact {
+        font-size: 1.2rem !important;
 
-        img {
-            margin-top: -2px; // TODO:
+        .header-contact-mobile {
+            display: block;
+
+            img {
+                margin-top: -2px; // TODO:
+            }
         }
     }
     .content-container {
@@ -537,6 +539,7 @@ $mobile-navbar-height: 50px;
             cursor: pointer;
             box-shadow: $shadow-medium;
             text-shadow: $shadow-really-far;
+            font-size: 1.35rem !important;
 
             img {
                 opacity: .8 !important;
