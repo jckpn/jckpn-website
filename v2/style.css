@@ -1,0 +1,94 @@
+@font-face {
+  font-family: Antipasto;
+  font-weight: normal;
+  src: url("./antipasto-light.ttf") format("truetype");
+}
+@font-face {
+  font-family: Now;
+  font-weight: bold;
+  src: url("./Now-Regular.otf") format("truetype");
+}
+@font-face {
+  font-family: Now;
+  font-weight: normal;
+  src: url("./Now-Thin.otf") format("truetype");
+}
+html {
+  font-size: 20px;
+}
+
+body {
+  background-color: #111;
+  font-family: "Now";
+}
+
+.content-container {
+  position: absolute;
+  width: 60%;
+  left: 20%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #c0d0d0;
+}
+
+.title-container .title {
+  font-family: "Antipasto";
+  font-size: 5rem;
+  margin-left: 0.07ch;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.title-container .title-underthing {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+.title-container .links-container {
+  margin-top: 1.5rem;
+}
+.title-container .links-container a {
+  color: #c0d0d0;
+  text-decoration: none;
+  margin: 0 1ch;
+  font-weight: bold;
+  letter-spacing: 0.08ch;
+  opacity: 0.8;
+  transition: all 0.2s ease-out;
+}
+.title-container .links-container a::before {
+  content: ">";
+  font-size: 80%;
+  margin-right: 0.5ch;
+  opacity: 0.7;
+}
+.title-container .links-container a:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  transition: all 0.4s ease-out;
+}
+
+.waves-bg {
+  z-index: -1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.waves-bg svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  stroke: #c0d0d0;
+  fill: none;
+  stroke-width: 3px;
+}
+.waves-bg svg path {
+  transition: d 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.waves-bg svg path#waves-path-1 {
+  opacity: 0.6;
+}
+.waves-bg svg path#waves-path-2 {
+  opacity: 0.3;
+}/*# sourceMappingURL=style.css.map */

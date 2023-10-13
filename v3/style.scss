@@ -1,0 +1,63 @@
+$bg-color: #f5f5f5;
+$base-color: #000011;
+$title-part-1-color: rgba($base-color, .8);
+$title-part-2-color: rgba($base-color, .7);
+$link-color: rgba($base-color, .85);
+
+html {
+    font-size: 18px;
+}
+
+body {
+    background-color: $bg-color;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
+
+.content-container {
+    position: absolute;
+    width: 80%;
+    top: 35%;
+    left: 10%;
+}
+
+
+.profile {
+    position: absolute;
+    width: 545px;
+    height: 160px;
+    left: 50%; transform: translateX(-50%);
+
+    .title-container {
+        position: absolute;
+        top: 15px;
+        width: 300px;
+        height: 100%;
+
+        .title {
+            text-align: right;
+
+            &.title-part-1 {
+                font-size: 4rem;
+                color: $title-part-1-color;
+            }
+
+            &.title-part-2 {
+                margin-top: .5rem;
+                font-size: 1.1rem;
+                color: $title-part-2-color;
+            }
+        }
+    }
+
+    img {
+        position: absolute;
+        right: 50px;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, .3);
+        filter: grayscale(100%);
+    }
+}
