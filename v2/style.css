@@ -27,13 +27,17 @@ body {
   width: 60%;
   left: 20%;
   top: 50%;
-  transform: translateY(-50%);
   color: #c0d0d0;
 }
 
+.title-container {
+  position: absolute;
+  transform: translateY(-50%);
+}
 .title-container .title {
   font-family: "Antipasto";
   font-size: 5rem;
+  opacity: 1;
   margin-left: 0.07ch;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -41,7 +45,7 @@ body {
 }
 .title-container .title-underthing {
   font-size: 1.1rem;
-  opacity: 0.9;
+  opacity: 0.75;
 }
 .title-container .links-container {
   margin-top: 1.5rem;
@@ -52,19 +56,95 @@ body {
   margin: 0 1ch;
   font-weight: bold;
   letter-spacing: 0.08ch;
-  opacity: 0.8;
-  transition: all 0.2s ease-out;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
 }
 .title-container .links-container a::before {
   content: ">";
   font-size: 80%;
   margin-right: 0.5ch;
-  opacity: 0.7;
 }
 .title-container .links-container a:hover {
   opacity: 1;
-  transform: scale(1.1);
-  transition: all 0.4s ease-out;
+  transition: all 1s cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+.stuff-container {
+  position: absolute;
+  transform: translateY(-50%);
+}
+.stuff-container .header {
+  font-family: "Antipasto";
+  font-size: 3em;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.title-container, .stuff-container {
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+.content-container.page-home .title-container {
+  opacity: 1;
+  pointer-events: auto;
+  top: 0;
+  transition-delay: 0.2s;
+}
+.content-container.page-home .about-container {
+  opacity: 0;
+  pointer-events: none;
+  top: 100px;
+  transition-delay: 0.1s;
+}
+
+.content-container.page-about .title-container {
+  opacity: 0;
+  pointer-events: none;
+  top: -100px;
+  transition-delay: 0.1s;
+}
+.content-container.page-about .about-container {
+  opacity: 1;
+  pointer-events: auto;
+  top: 0;
+  transition-delay: 0.2s;
+}
+
+.back-button {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: -76px;
+  top: -8px;
+  transform: scale(67%);
+  padding: 10px 20px 20px 10px;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
+}
+.back-button:hover {
+  opacity: 1;
+  transition: all 1s cubic-bezier(0.2, 1, 0.2, 1);
+}
+.back-button .back-arrow {
+  margin: 15px auto;
+  width: 25px;
+  height: 25px;
+  border-top: 3px solid #c0d0d0;
+  border-left: 3px solid #c0d0d0;
+  transform: rotate(-45deg);
+}
+.back-button .back-arrow::after {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 45px;
+  background-color: #c0d0d0;
+  transform: rotate(-45deg) translate(15px, 4px);
+  left: 0;
+  top: 0;
 }
 
 .waves-bg {
@@ -84,7 +164,9 @@ body {
   stroke-width: 3px;
 }
 .waves-bg svg path {
-  transition: d 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: d;
+  transition-duration: 2s;
+  transition-timing-function: cubic-bezier(0.2, 1, 0.2, 1);
 }
 .waves-bg svg path#waves-path-1 {
   opacity: 0.6;

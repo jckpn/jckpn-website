@@ -1,4 +1,4 @@
-$(function() {
+$(function() { // WAVES
     var mouseX = 50;
     var mouseY = 50;
     var animX = 0;
@@ -24,31 +24,49 @@ $(function() {
 
 
     function updateWaves() {
-        let d1, d2; // svg paths
-
-        // animX/Y add extra movement to waves regardless of mouse position
+        // update anim variables to add extra movement to waves
         animX = Math.sin(frame / 15) * 20;
         animY = -Math.sin(frame / 15) * 15;
+        frame++; if (frame / 15 > Math.PI*2) frame = 0;
 
-        frame++;
-        if (frame / 15 > Math.PI*2) frame = 0;
+        let x = mouseX + animX;
+        let y = mouseY + animY;
+        
 
-        // if (hoveringLink) { // focus waves around link/mouse
-        //     let x = mouseX + animX/10;
-        //     let y = 50 + animY/10;
+        let d1, d2;
 
-        //     d1 = 'M -5,105 C ' + (x) + ',' + (y-25) + ' ' + (x) + ',' + (y-25) + ' 105,105';
-        //     d2 = 'M -5,-5 C ' + (x) + ',' + (y+25) + ' ' + (x) + ',' + (y+25) + ' 105,-5';
-        // } else { // animate around, vaguely following mouse
-            let x = mouseX + animX;
-            let y = mouseY + animY;
-
+        if ($('.content-container').hasClass('page-home')) {
             // set svg path
-            d1 = 'M -5,' + (50+y/6) + ' C 40,100 ' + (40+x/3) + ',' + (50+y/4-x/8) + ' 105,105';
-            d2 = 'M -5,' + (40+y/5) + ' C 60,115 ' + (40+x/4) + ',' + (50+y/3-x/8) + ' 105,95';
-        // }
+            d1 = 'M -5,' + (60+y/12) + ' C 40,100 ' + (40+x/3) + ',' + (50+y/4-x/8) + ' 105,105';
+            d2 = 'M -5,' + (50+y/9) + ' C 60,115 ' + (40+x/4) + ',' + (50+y/3-x/8) + ' 105,95';
+        } else {
+            d1 = 'M -5,' + (-20+y/10) + ' C -10,20 ' + (40+x/12) + ',' + (y/8-x/11) + ' 105,25';
+            d2 = 'M -5,' + (-20+y/15) + ' C 60,15 ' + (40+x/10) + ',' + (30+y/10-x/12) + ' 105,20';
+        }
 
         $('#waves-path-1').attr('d', d1);
         $('#waves-path-2').attr('d', d2);
     }
+});
+
+$(function() { // LINKS
+    $('.back-button').on('click', () => {
+        $('.content-container').addClass('page-home');
+        $('.content-container').removeClass('page-about');
+
+        $('path').css('transition-duration', '1s');
+        setTimeout(() => {
+            $('path').css('transition-duration', '2s');
+        }, 1000);
+    });
+
+    $('#link-about').on('click', () => {
+        $('.content-container').addClass('page-about');
+        $('.content-container').removeClass('page-home');
+
+        $('path').css('transition-duration', '1s');
+        setTimeout(() => {
+            $('path').css('transition-duration', '2s');
+        }, 1000);
+    });
 });
