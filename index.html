@@ -1,52 +1,117 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>jckpn – Homepage</title>
-
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>jckpn – Freelance Developer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="bg-container">
-        <svg class="bg-wave bg-wave-1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 100 100">
-            <path d="M0,100 L0,30 C60,30 70,10 100,0 L100,100 Z"></path>
+    <div class="background">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path vector-effect="non-scaling-stroke" id="waves-path-1"></path>
+            <path vector-effect="non-scaling-stroke" id="waves-path-2"></path>
         </svg>
-        <svg class="bg-wave bg-wave-2" xmlns="http://www.w3.org/2000/svg"  preserveAspectRatio="none" viewBox="0 0 100 100">
-            <path d="M0,100 L0,70 C60,75 70,50 100,55 L100,100 Z"></path>
-        </svg>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
     </div>
 
-    <div class="content-container intro-container">
-        <div class="headline">
-            <div class="headline-pt1">hi, i'm</div>
-            <div class="headline-pt2">jckpn</div>
+    <div class="content-container page-home">
+        <div class="title-container">
+            <div class="title">
+                jckpn
+            </div>
+            <div class="title-underthing">
+                a freelance software engineer
+                <br>
+                who would love to work with you
+            </div>
+            <div class="links-container">
+                <a class="faux-page-link link-about">about</a>
+                <a class="faux-page-link link-projects">portfolio</a>
+                <a class="faux-page-link link-contact">contact</a>
+            </div>
         </div>
-        <div class="links-container">
-            <a class="somewhere-link about-link">About Me</a>
-            <a class="somewhere-link" href="https://gptyper.net">GPTyper</a>
-            <br>
-            <a class="somewhere-link" href="https://github.com/jckpn">GitHub</a>
-            <a class="somewhere-link" href="https://www.linkedin.com/in/jckpn">LinkedIn</a>
-            <a class="somewhere-link" href="/monty.png">Monty</a>
-        </div>
-    </div>
 
-    <div class="content-container about-container">
-        <div class="about-text">
-            <p>Hi! I'm <b>Jack Paine</b>, a 22-year-old software engineer currently specialising in AI and language models.</p>
-            <!-- <p>I have a Bachelor's in Artificial Intelligence from <a href="https://www.lboro.ac.uk/">Loughborough University</a>, and am working towards a Master's in Machine Learning at the <a href="https://www.nottingham.ac.uk/">University of Nottingham</a>.</p> -->
-            <p>Contact: Feel free to shoot an email to <span class="email-addr">!email requires js!</span></p>
+        <div class="stuff-container">
+            <div class="back-button">
+                <div class="back-arrow"></div>
+            </div>
+
+            <div class="content-section section-about">
+                <div class="header header-about">
+                    about
+                </div>
+                <div class="description">
+                    <p>
+                        I'm Jack Paine, a 22-year-old software engineer specialising in Machine Learning at the <a href="https://www.nottingham.ac.uk/">University of Nottingham</a>.
+                    </p>
+                    <p>
+                        I'm passionate about helping people and building things that people love. I've worked on a variety of projects, ranging from web apps to mobile apps to games.
+                    </p>
+                    <img src="https://media.licdn.com/dms/image/D4E03AQHTKxqkrH0Paw/profile-displayphoto-shrink_200_200/0/1691496517750?e=1703116800&v=beta&t=k4rKeRzJOflahbMLCMpfnkcy1f4AYheFi9EdGy0xfik" />
+                </div>
+            </div>
+
+            <div class="content-section section-projects">
+                <div class="header header-projects">
+                    portfolio
+                </div>
+                <div class="description">
+                    <p>
+                        I've worked on a wide range of projects from mobile apps to websites to AI vision models. Check them out here:
+                    </p>
+                    <p>
+                        <div class="project-link">
+                            <div class="project-tag">Ceri Launcher</div>
+                            <img src="https://image.winudf.com/v2/image1/bWUuamNrcG4uY2VyaWxhdW5jaGVyX3NjcmVlbl8xXzE1OTE5NzU3MDhfMDkw/screen-1.webp?fakeurl=1&type=.webp" />
+                        </div>
+                        <div class="project-link">
+                            <div class="project-tag">GPTyper</div>
+                            <img src="assets/gptyper.png" />
+                        </div>
+                        <div class="project-link">
+                            <div class="project-tag">Facial Age CNN</div>
+                            <img src="https://image.winudf.com/v2/image1/bWUuamNrcG4uY2VyaWxhdW5jaGVyX3NjcmVlbl8xXzE1OTE5NzU3MDhfMDkw/screen-1.webp?fakeurl=1&type=.webp" />
+                        </div>
+                        <div class="project-link">
+                            <div class="project-tag">Jewellery Parties</div>
+                            <img src="https://image.winudf.com/v2/image1/bWUuamNrcG4uY2VyaWxhdW5jaGVyX3NjcmVlbl8xXzE1OTE5NzU3MDhfMDkw/screen-1.webp?fakeurl=1&type=.webp" />
+                        </div>
+                    </p>
+                </div>
+            </div>
+
+            <div class="content-section section-contact">
+                <div class="header header-contact">
+                    contact
+                </div>
+                <div class="description">
+                    <p>
+                        Want to get in touch? Just send me an email at <a href="mailto:jackpaine3@gmail.com">jackpaine3@gmail.com</a>.
+                    </p>
+                </div>
+            </div>
         </div>
-        <a class="buttony-link about-back">
-            go back
-        </a>
+
+        <div class="footer">
+            <div class="footer-text">
+                &copy; 2023 Jack Paine
+            </div>
+        </div>
     </div>
 
     <script src="jquery-3.7.0.min.js"></script>
-	<script src="main.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
