@@ -1,17 +1,12 @@
 @font-face {
   font-family: Antipasto;
   font-weight: normal;
-  src: url("./antipasto-light.ttf") format("truetype");
-}
-@font-face {
-  font-family: Now;
-  font-weight: bold;
-  src: url("./Now-Regular.otf") format("truetype");
+  src: url("./assets/antipasto-light.ttf") format("truetype");
 }
 @font-face {
   font-family: Now;
   font-weight: normal;
-  src: url("./Now-Thin.otf") format("truetype");
+  src: url("./assets/Now-Thin.otf") format("truetype");
 }
 html {
   font-size: 20px;
@@ -21,7 +16,6 @@ body {
   background-color: #111;
   overflow-y: hidden;
   font-family: "Now";
-  text-shadow: 1px 1px 2px #c0d0d0;
 }
 
 .title-container {
@@ -39,7 +33,7 @@ body {
 }
 .title-container .title-underthing {
   font-size: 1.1rem;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 .title-container .links-container {
   margin-top: 1.5rem;
@@ -50,7 +44,7 @@ body {
   font-weight: bold;
   letter-spacing: 0.08ch;
   cursor: pointer;
-  opacity: 0.55;
+  opacity: 0.51;
   transition: all 0.6s cubic-bezier(0.2, 1, 0.2, 1);
 }
 .title-container .links-container a::before {
@@ -90,7 +84,7 @@ body {
   opacity: 1;
 }
 .stuff-container .content-section p {
-  opacity: 0.7;
+  opacity: 0.64;
 }
 
 .title-container, .stuff-container, .content-section {
@@ -139,7 +133,7 @@ body {
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
-  opacity: 0.85;
+  opacity: 0.8;
   transition: all 0.6s cubic-bezier(0.2, 1, 0.2, 1);
 }
 .section-projects .project-link:hover {
@@ -170,7 +164,7 @@ body {
   filter: none;
 }
 .content-container .content-section:not(.chosen-section) {
-  opacity: 0.4;
+  opacity: 0.41;
   filter: blur(1px) grayscale(100%);
 }
 
@@ -182,7 +176,7 @@ body {
   transform: scale(67%);
   padding: 2px 20px 20px 10px;
   cursor: pointer;
-  opacity: 0.7;
+  opacity: 0.64;
   transition: all 0.9s cubic-bezier(0.2, 1, 0.2, 1);
 }
 .back-button:hover {
@@ -282,7 +276,12 @@ a {
   top: 0;
   right: 0;
   margin: 10px 15px;
-  opacity: 0.4;
+  padding: 0 0 15% 15%;
+  opacity: 0.41;
   font-size: 0.8rem;
   text-align: right;
+  transition: opacity 0.6s cubic-bezier(0.2, 1, 0.2, 1);
+}
+.footer:hover {
+  opacity: 0.64;
 }/*# sourceMappingURL=style.css.map */

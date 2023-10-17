@@ -46,15 +46,15 @@ $(function() { // BACKGROUND
         const x = mouseX + animX;
         const y = mouseY + animY;
 
-        const d1 = 'M -5,' + (60+y/12 - scrollY)
-            + ' C 40,' + (100 - scrollY*1.2)
-            + ' ' + (40+x/3) + ',' + (50+y/4-x/8)
-            + ' 105,' + (105 - scrollY*1.5);
+        const d1 = 'M -5,' + (60+y/12 - scrollY*1.2)
+            + ' C 40,' + (100 - scrollY*0.7)
+            + ' ' + (40+x/3) + ',' + (50 + y/4 - x/8 - scrollY)
+            + ' 105,' + (105 - scrollY*1.2);
 
-        const d2 = 'M -5,' + (50+y/9 - scrollY)
-            + ' C 60,' + (110 - scrollY*2)
-            + ' ' + (40+x/4) + ',' + (50+y/3-x/8)
-            + ' 105,' + (95 - scrollY*1.2);
+        const d2 = 'M -5,' + (50+y/9 - scrollY*0.9)
+            + ' C 60,' + (110 - scrollY*1.3)
+            + ' ' + (40+x/4) + ',' + (50 + y/3 - x/8 - scrollY)
+            + ' 105,' + (95 - scrollY*.8);
 
         $('#waves-path-1').attr('d', d1);
         $('#waves-path-2').attr('d', d2);
