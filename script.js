@@ -5,7 +5,6 @@ $(function() { // BACKGROUND
     var animX = 0;
     var animY = 0;
     var frame = 0;
-    var hoveringLink = false;
     var dotPositions = [
         { x: 25, y: 17, r: 0.4 },
         { x: 61, y: 10, r: 0.4 },
@@ -20,6 +19,7 @@ $(function() { // BACKGROUND
         { x: 71, y: 56, r: 0.5 },
         { x: 25, y: 35, r: 0.3 },
     ];
+    var scrollAmount = 0;
 
     setInterval(updateBG, 100);
     updateBG();
@@ -131,8 +131,10 @@ $(function() { // BACKGROUND
 
         if (pageName == 'home') {
             $('.content-container').addClass('page-home');
+            $('.footer').removeClass('footer-hidden');
         } else {
             $('.content-container').removeClass('page-home');
+            $('.footer').addClass('footer-hidden');
         }
 
         console.log('run once');
@@ -162,16 +164,29 @@ $(function() { // BACKGROUND
             $('.back-button').css('top', (sectionPos) + 'px');
         }
 
-        if (pageName == 'home') scrollY = 0;
-        else if (pageName == 'about') scrollY = 60;
-        else if (pageName == 'projects') scrollY = 80;
-        else if (pageName == 'contact') scrollY = 100;
+        if (pageName == 'home') {
+            scrollY = 0;
+            scrollAmount = 0;
+        }
+        else if (pageName == 'about') {
+            scrollY = 60;
+            scrollAmount = 0;
+        }
+        else if (pageName == 'projects') {
+            scrollY = 80;
+            scrollAmount = 50;
+        }
+        else if (pageName == 'contact') {
+            scrollY = 100;
+            scrollAmount = 100;
+        }
 
         setTimeout(() => {
             transitioning = false;
         }, transitionDelay);
 
         updateBG();
+        updateScrollbar();
     }
 
     detectURLHash();
@@ -186,5 +201,9 @@ $(function() { // BACKGROUND
         } else {
             loadFauxPage('home', true);
         }
+    }
+
+    function updateScrollbar() {
+        $('.scrollbar').css('top', 'calc(' + scrollAmount + '%)'); // scrollbar is 100px
     }
 });

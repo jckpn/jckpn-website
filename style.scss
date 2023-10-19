@@ -1,15 +1,15 @@
 $bg-color: #111;
 $base-color: #c0d0d0;
-$anim-curve: cubic-bezier(.2, 1, .2, 1);
+$anim-curve: cubic-bezier(.2, 1, .4, 1);
 $opacity-5: 1;
 $opacity-4: .8;
 $opacity-3: .64;
 $opacity-2: .51;
 $opacity-1: .41;
-$anim-dur-long: 1.2s;
-$anim-dur-med: .9s;
-$anim-dur-short: .6s;
-$content-max-width: 760px;
+$anim-dur-long: .8s;
+$anim-dur-med: .6s;
+$anim-dur-short: .4s;
+$content-max-width: 860px;
 
 @font-face {
     font-family: Antipasto;
@@ -35,7 +35,7 @@ body {
 
 .title-container {
     position: absolute;
-    transform: translateY(calc(-50% + 5vh));
+    left: -60px;
     
     .title {
         font-family: 'Antipasto';
@@ -51,7 +51,7 @@ body {
     }
 
     .links-container {
-        margin-top: 1.5rem;
+        margin-top: 2rem;
 
         a {
             text-decoration: none;
@@ -59,19 +59,13 @@ body {
             font-weight: bold;
             letter-spacing: .08ch;
             cursor: pointer;
-            opacity: $opacity-2;
 
-            transition: all $anim-dur-short $anim-curve;
-
-            &::before {
-                content: '>';
+            &::before, &::after {
                 font-size: 80%;
                 margin-right: .5ch;
             }
-
-            &:hover {
-                opacity: $opacity-5;
-                transition: all $anim-dur-long $anim-curve;
+            &::before {
+                content: '>';
             }
         }
     }
@@ -80,10 +74,10 @@ body {
 
 .content-container {
     position: absolute;
-    top: 50%;
+    top: 50%; bottom: 30%;
     width: 60%;
-    left: 20%;
-    height: 100px;
+    max-width: $content-max-width;
+    left: 50%; transform: translateX(-50%);
     color: $base-color;
     transition: all $anim-dur-short $anim-curve;
 }
@@ -104,28 +98,24 @@ body {
         }
 
         p {
-            opacity: $opacity-3;
+            color: rgba($base-color, $opacity-4);
         }
     }
 }
 
-.title-container, .stuff-container, .content-section {
-    transition: all $anim-dur-med $anim-curve; // scroll anim
-}
-
-.content-container.page-home {
-    top: 50%;
-    
+.content-container.page-home {    
     .title-container {
         opacity: 1;
         pointer-events: auto;
-        top: 0;
+        bottom: 0;
+        transition: all $anim-dur-long $anim-curve;
     }
 
     .stuff-container {
         opacity: 0;
         pointer-events: none;
         top: 10vh;
+        transition: all $anim-dur-med $anim-curve; // scroll anim
     }
 }
 
@@ -133,13 +123,15 @@ body {
     .title-container {
         opacity: 0;
         pointer-events: none;
-        top: -15vh;
+        bottom: 15vh;
+        transition: all .3s ease-out; // more linear than anim-curve, looks better here
     }
 
     .stuff-container {
         opacity: 1;
         pointer-events: auto;
         top: 0;
+        transition: all $anim-dur-med $anim-curve; // scroll anim
     }
 }
 
@@ -194,13 +186,17 @@ body {
 }
 
 .content-container {
-    .content-section.chosen-section {
-        opacity: 1;
-        filter: none;
-    }
-    .content-section:not(.chosen-section) {
-        opacity: $opacity-1;
-        filter: blur(1px) grayscale(100%);
+    .content-section {
+        transition: all $anim-dur-short $anim-curve;
+
+        &.chosen-section {
+            opacity: 1;
+            filter: none;
+        }
+        &:not(.chosen-section) {
+            opacity: $opacity-1;
+            filter: blur(1px) grayscale(100%);
+        }
     }
 }
 
@@ -239,6 +235,19 @@ body {
             top: 0;
         }
     }
+}
+
+.scrollbar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-color: #ff00ff33;
+    right: -30px;
+    background-color: $base-color;
+    opacity: $opacity-1;
+    border-radius: 5px;
+    transition: top $anim-dur-med $anim-curve;
 }
 
 .background {
@@ -284,53 +293,94 @@ body {
 }
 
 a {
-    color: $base-color;
+    color: rgba($base-color, $opacity-3);
+    font-weight: bold;
+
+    transition: color $anim-dur-short $anim-curve;
+
+    &:hover {
+        color: rgba($base-color, $opacity-5);
+    }
 }
 
-@media screen and (min-width: 1400px) {
-    .title-container {
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-    }
+// @media screen and (min-width: 1400px) {
+//     .title-container {
+//         position: absolute;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//         text-align: center;
+//     }
         
-    .stuff-container {
-        left: calc(50% - #{$content-max-width/2});
-    }
-}
+//     .stuff-container {
+//         left: calc(50% - #{$content-max-width/2});
+//     }
+// }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: $content-max-width) {
     .content-container {
-        left: 15%;
-        width: 70%;
-    }
-
-    .title-container {
-        position: absolute;
         width: 100%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-    }
-        
-    .stuff-container {
-        left: 0;
+
+        .title-container {
+            left: 0;
+            width: 100%;
+            text-align: center;
+    
+            .title-underthing {
+                font-size: 1rem;
+            }
+    
+            .links-container {
+                margin-top: 3rem;
+    
+                a {
+                    margin: 8px 0;
+                    display: block;
+                    width: 100%;
+                }
+    
+                a::after {
+                    content: ' <';
+                }
+            }
+        }
+
+        .stuff-container {
+            .back-button {
+                left: -70px;
+            }
+
+            left: 80px;
+            right: 40px;
+        }
+
+        .section-about {
+            img {
+                width: 150px;
+            }
+        }
     }
 }
 
 .footer {
     position: fixed;
-    top: 0;
-    right: 0;
-    margin: 10px 15px;
-    padding: 0 0 15% 15%;
+    bottom: 0;
+    left: 50%; transform: translateX(-50%);
+    color: $base-color;
+    
+    padding: 10%; // for fade in when mouse is close
+    padding-bottom: 15px;
     opacity: $opacity-1;
-    font-size: .8rem;
+    font-size: .75rem;
     text-align: right;
-    transition: opacity $anim-dur-short $anim-curve;
+    transition: all $anim-dur-med $anim-curve;
 
     &:hover {
         opacity: $opacity-3;
+    }
+
+    &.footer-hidden {
+        transition: all .15s ease-out; // same as title-container
+        bottom: 7vh;
+        opacity: 0;
     }
 }
