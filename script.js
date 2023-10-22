@@ -60,8 +60,8 @@ $(function() { // BACKGROUND
         $('#waves-path-2').attr('d', d2);
 
         $('.dot').each(function(i) {
-            $(this).css('width', dotPositions[i].r*10 + 'px');
-            $(this).css('height', dotPositions[i].r*10 + 'px');
+            $(this).css('width', Math.pow(dotPositions[i].r, 2)*30 + 'px');
+            $(this).css('height', Math.pow(dotPositions[i].r, 2)*30 + 'px');
             $(this).css('left', 'calc(' + dotPositions[i].x + '% + ' + dotPositions[i].r*x + 'px)');
             $(this).css('top', 'calc(' + dotPositions[i].y + '% + ' + dotPositions[i].r*(y-scrollY*5) + 'px)');
         });
@@ -161,7 +161,7 @@ $(function() { // BACKGROUND
             sectionHeight = $('.section-' + pageName).height();
             sectionPos = $('.section-' + pageName).position().top;
             $('.stuff-container').css('transform', 'translateY(' + (-sectionPos - sectionHeight/2) + 'px)');
-            $('.back-button').css('top', (sectionPos) + 'px');
+            $('.back-button').css('top', (sectionPos - 5) + 'px');
         }
 
         if (pageName == 'home') {

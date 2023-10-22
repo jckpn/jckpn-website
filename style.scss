@@ -2,10 +2,10 @@ $bg-color: #111;
 $base-color: #c0d0d0;
 $anim-curve: cubic-bezier(.2, 1, .4, 1);
 $opacity-5: 1;
-$opacity-4: .8;
-$opacity-3: .64;
-$opacity-2: .51;
-$opacity-1: .41;
+$opacity-4: .9;
+$opacity-3: .8;
+$opacity-2: .6;
+$opacity-1: .4;
 $anim-dur-long: .8s;
 $anim-dur-med: .6s;
 $anim-dur-short: .4s;
@@ -144,14 +144,16 @@ body {
 }
 
 .section-projects {
+    a { text-decoration: none; }
+
     .project-link {
         display: inline-block;
         margin: 8px;
         position: relative;
-        width: 180px;
-        height: 140px;
+        width: 200px;
+        height: 160px;
         padding: 5px;
-        background-color: #444;
+        background-color: #555;
         border-radius: 10px;
         overflow: hidden;
         cursor: pointer;
@@ -160,7 +162,11 @@ body {
 
         &:hover {
             opacity: $opacity-5;
-            box-shadow: 0 0 20px rgba(#fff, .3);
+            box-shadow: 0 0 20px rgba(#fff, .2);
+
+            img {
+                opacity: $opacity-5;
+            }
         }
 
         img {
@@ -168,19 +174,22 @@ body {
             height: 100%;
             object-fit: cover;
             border-radius: 5px;
-            // inset box shadow
+            opacity: $opacity-4;
         }
 
         .project-tag {
+            z-index: 1; // above img
             position: absolute;
-            width: 180px;
+            left: -1px;
+            width: calc(100% + 2px);
             height: 32px;
             line-height: 32px;
             vertical-align: middle;
             font-size: .85rem;
             bottom: 0;
-            background-color: #444;
+            background-color: #555;
             text-align: center;
+            overflow: ellipsis;
         }
     }
 }
@@ -196,6 +205,10 @@ body {
         &:not(.chosen-section) {
             opacity: $opacity-1;
             filter: blur(1px) grayscale(100%);
+
+            &:hover {
+                opacity: $opacity-2;
+            }
         }
     }
 }
@@ -208,7 +221,7 @@ body {
     transform: scale(67%);
     padding: 2px 20px 20px 10px;
     cursor: pointer; // handle click in js
-    opacity: $opacity-3;
+    opacity: $opacity-2;
     transition: all $anim-dur-med $anim-curve;
 
     &:hover {
@@ -316,7 +329,7 @@ a {
 //     }
 // }
 
-@media screen and (max-width: $content-max-width) {
+@media screen and (max-width: 700px) {
     .content-container {
         width: 100%;
 
