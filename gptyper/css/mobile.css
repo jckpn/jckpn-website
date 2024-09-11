@@ -1,0 +1,142 @@
+:root {
+  --pure-white: #fff;
+  --editor-bg-color: #fffefc;
+  --font-color: #333;
+  --header-color: #111;
+  --pure-black: #000;
+  --mid-grey: #888;
+  --light-grey: #bbb;
+  --blue-accent: #3090d0;
+  --image-border-color: #888;
+  --image-shadow-color: rgba(0,0,0,0.2);
+  --toolbar-bg-color: #fff;
+  --toolbar-border-color: #bbb;
+  --toolbar-shadow-color: rgba(0,0,0,0.2);
+  --settings-menu-border-color: #eee;
+  --bg-color: #eee;
+  --page-shadow-color: var(--toolbar-shadow-color);
+  --red-accent: #bd6e6e; }
+
+[theme="dark"] {
+  --pure-white: #000;
+  --editor-bg-color: #222;
+  --font-color: #ddd;
+  --header-color: #eee;
+  --pure-black: #fff;
+  --mid-grey: #777;
+  --light-grey: #333;
+  --blue-accent: #3090d0;
+  --image-border-color: #888;
+  --image-shadow-color: rgba(0,0,0,0.2);
+  --toolbar-bg-color: #333;
+  --toolbar-border-color: #333;
+  --toolbar-shadow-color: rgba(0,0,0,0.3);
+  --settings-menu-border-color: #202020;
+  --bg-color: var(--editor-bg-color);
+  --page-shadow-color: transparent;
+  --red-accent: #bd6e6e; }
+  [theme="dark"] img {
+    filter: invert(100%); }
+
+[theme="sepia"] {
+  --pure-white: #fff;
+  --editor-bg-color: #f5f0e8;
+  --font-color: #333;
+  --header-color: #111;
+  --pure-black: #000;
+  --mid-grey: #888;
+  --light-grey: #bbb;
+  --blue-accent: #3090d0;
+  --image-border-color: #888;
+  --image-shadow-color: rgba(0,0,0,0.2);
+  --toolbar-bg-color: #fff7f0;
+  --toolbar-border-color: #bbb;
+  --toolbar-shadow-color: rgba(0,0,0,0.2);
+  --settings-menu-border-color: #eee;
+  --bg-color: #eee;
+  --page-shadow-color: var(--toolbar-shadow-color);
+  --red-accent: #bd6e6e; }
+  [theme="sepia"] img {
+    filter: sepia(100%); }
+
+@font-face {
+  font-family: 'Latin Modern Roman';
+  src: url("../assets/fonts/lmroman10-regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Latin Modern Roman';
+  src: url("../assets/fonts/lmroman10-bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Latin Modern Roman';
+  src: url("../assets/fonts/lmroman10-italic.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Latin Modern Roman';
+  src: url("../assets/fonts/lmroman10-bolditalic.otf") format("opentype");
+  font-weight: bold;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url("../assets/fonts/Metropolis-Regular.otf") format("opentype"); }
+
+body {
+  background-color: var(--editor-bg-color);
+  margin: auto;
+  padding: 0;
+  font-family: 'Metropolis', sans-serif;
+  overflow: hidden; }
+
+@media (max-width: 600px) {
+  .menubar-container .menubar .menubar-button {
+    margin-left: 8px !important;
+    padding: 0 0 0 6px; }
+    .menubar-container .menubar .menubar-button span {
+      opacity: 0;
+      max-width: 0 !important; }
+  .small-popup {
+    left: 0;
+    width: auto !important; }
+  .large-popup-container {
+    background: var(--pure-white); }
+    .large-popup-container .large-popup {
+      width: calc(100vw - 40px);
+      top: 50% !important;
+      max-width: 380px;
+      padding: 20px;
+      border-radius: 0;
+      box-shadow: none; }
+    .large-popup-container .large-popup-close {
+      margin: 12px; } }
+
+@media (max-width: 500px) {
+  .menubar-container .menubar .menubar-button {
+    margin-left: 0 !important; }
+  .menubar-container .menubar .menubar-logo {
+    margin-left: 25px; }
+  .menubar-container .menubar .menubar-buttons-container {
+    margin-right: 20px; }
+  #editor.ql-container > div.ql-editor {
+    padding-left: 3ch;
+    padding-right: 3ch; }
+  .large-popup-container .large-popup .large-popup-title {
+    font-size: 20px !important; }
+  .large-popup-container .large-popup .large-popup-desc {
+    font-size: 14px !important; }
+  .tokens-popup-container .tokens-popup .tokens-choices-container {
+    display: block; }
+  .tokens-popup-container .tokens-popup button.donate-button {
+    width: 120px;
+    height: 40px;
+    margin: 5px 0; }
+  .aicfg-popup-container .aicfg-demo {
+    font-size: 14px !important; }
+  body .footer span:not(:first-child) {
+    display: none; } }

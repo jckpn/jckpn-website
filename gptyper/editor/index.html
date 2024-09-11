@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+	<title>GPTyper – Editor</title>
+
+	<link rel="stylesheet" href="../css/quill-default-styles.css?v=0.4.9">
+	<link rel="stylesheet" href="../css/base.css?v=0.4.9">
+	<link rel="stylesheet" href="../css/editor.css?v=0.4.9">
+	<link rel="stylesheet" href="../css/editor-content.css?v=0.4.9">
+	<link rel="stylesheet" href="../css/toolbar.css?v=0.4.9">
+	<link rel="stylesheet" href="../css/loading-overlay.css?v=0.4.9">
+	<link rel="stylesheet" href="../css/gpt-suggestion.css?v=0.4.9">
+	<link rel="stylesheet" href="../css/gpt-proofread.css?v=0.4.9">
+	<link rel="stylesheet" href="../css/settings-menu.css?v=0.4.9">
+	<link rel="stylesheet" href="../css/menubar.css?v=0.4.9">
+	<link rel="stylesheet" href="../css/alerts.css?v=0.4.9">
+	<link rel="stylesheet" href="../css/mobile.css?v=0.4.9">
+</head>
+
+<body>
+	<div class="loading-overlay first-loading-overlay-active">
+		<!-- 'active' class gets disabled on load in the js -->
+		<div class="loading-spinner"></div>
+		<div class="loading-text">Loading Editor</div>
+	</div>
+
+    <!-- empty editor element for quill setup -->
+	<div id="editor"></div>
+
+    <div class="gpt-proofread-container"></div>
+	
+	<div class="gpt-loading-dots">
+		<div class="loading-dot loading-dot-1"></div>
+		<div class="loading-dot loading-dot-2"></div>
+		<div class="loading-dot loading-dot-3"></div>
+	</div>
+
+	<div class="menubar-container">
+		<div class="menubar">
+			<div class="menubar-logo">GPTyper</div>
+
+			<div class="menubar-buttons-container">
+				<div class="menubar-button file-button">
+					<img src="../assets/icons/files.png" draggable="false" />
+					<span>File</span>
+				</div>
+				<div class="menubar-button gpt-button">
+					<img src="../assets/icons/gpt-explain.png" draggable="false" />
+					<span>GPT</span>
+				</div>
+				<div class="menubar-button editor-button">
+					<img src="../assets/icons/toolbar.png" draggable="false" />
+					<span>Tools</span>
+				</div>
+				<div class="menubar-button settings-button">
+					<img src="../assets/icons/settings.png" draggable="false" />
+					<span>Settings</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="menus-container">
+		<div class="menu-banner file-menu-banner">
+			<div class="menu-option file-menu-option-new">New File</div>
+            <div class="menu-option menu-option-spacer"></div>
+			<div class="menu-option file-menu-option-import">Import File...</div>
+			<div class="menu-option file-menu-option-export">Export File...</div>
+            <div class="menu-option menu-option-spacer"></div>
+			<div class="menu-option menu-option-comingsoon">Save to Drive...</div>
+			<div class="menu-option menu-option-comingsoon">Open from Drive...</div>
+		</div>
+		<div class="menu-banner gpt-menu-banner">
+			<div class="menu-option option-suggestions">
+				<span>Predictions:</span>
+				<span class="option-status option-suggestions-status">?<span>
+			</div>
+            <div class="menu-option option-aicfg">
+                <span>Predictions Config...</span>
+            </div>
+			<div class="menu-option menu-option-spacer"></div>
+			<!-- <div class="menu-option option-factchecker">
+				<span>Proof-Read Document</span>
+				<span class="option-status option-factchecker-status">?<span>
+			</div> -->
+			<div class="menu-option option-gptcheck menu-option-comingsoon">
+				<span>Proof-Reader: Off</span>
+			</div>
+            <div class="menu-option option-aicfg menu-option-comingsoon">
+                <span>Proof-Reader Config...</span>
+            </div>
+			<!-- <div class="menu-option option-showcontext">
+				<span>Show Inputs:</span>
+				<span class="option-status option-showcontext-status">?<span>
+			</div> -->
+			<div class="menu-option menu-option-spacer"></div>
+			<div class="menu-option menu-option-disabled option-tokensleft">
+				<span>Tokens Left:</span>
+				<span class="option-status option-tokensleft-status">?<span>
+			</div>
+			<div class="menu-option option-gettokens gettokens-button">
+				<span>Get More Tokens...</span>
+			</div>
+			<!-- <div class="menu-option option-apikey">
+				<span>Override API Key...</span>
+			</div> -->
+		</div>
+		<div class="menu-banner settings-menu-banner">
+			<div class="menu-option option-about">
+				<span>About GPTyper</span>
+			</div>
+			<div class="menu-option menu-option-spacer"></div>
+			<div class="menu-option option-theme">
+				<span>Theme:</span>
+				<span class="option-status option-theme-status">?<span>
+			</div>
+			<div class="menu-option option-focusmode">
+				<span>Hide Toolbar:</span>
+				<span class="option-status option-focusmode-status">?<span>
+			</div>
+			<div class="menu-option option-numberedhs">
+				<span>Numbered Hs:</span>
+				<span class="option-status option-numberedhs-status">?<span>
+			</div>
+			<!-- <div class="menu-option option-devmode">
+				<span>Dev Mode:</span>
+				<span class="option-status option-devmode-status">?<span>
+			</div> -->
+			<div class="menu-option menu-option-spacer"></div>
+			<!-- <div class="menu-option option-reset">
+				<span>Reset Settings</span>
+			</div> -->
+			<div class="menu-option option-logout">
+				<span>Log Out</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="small-popup annoying-banner">
+		<div class="small-popup-message annoying-banner-message">
+			You have <span class="option-tokensleft-status">?</span> tokens left.
+		</div>
+		<div class="annoying-banner-message-noneleft">
+			You have run out of tokens — suggestions are disabled.
+		</div>
+		<div class="upgrade-button gettokens-button">Get More Tokens</div>
+	</div>
+
+	<div class="small-popup custom-alert">
+		<div class="small-popup-message">
+			<span class="custom-alert-text">Alert Text</span>
+		</div>
+	</div>
+
+	<!-- <div class="dev-info-container">
+		<table class="dev-info-table">
+			<tr>
+				<td>
+					<span>session calls:</span>
+					<span class="dev-info-status dev-info-sessioncalls">?<span>
+				</td>
+				<td>
+					<span>session cost:</span>
+					<span class="option-status dev-info-sessioncost">?<span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>context size:</span>
+					<span class="option-status dev-info-contextsize">?<span>
+				</td>
+				<td>
+					<span>user id:</span>
+					<span class="option-status dev-info-userid">?<span>
+				</td>
+			</tr>
+		</table> 
+	</div> -->
+
+	<div class="large-popup-container tokens-popup-container">
+		<div class="large-popup tokens-popup">
+			<div class="large-popup-title tokens-popup-title">GPTyper Tokens</div>
+
+			<div class="large-popup-desc tokens-popup-desc">
+				This web app costs money to run, and I need to pay for my use of the OpenAI API. If you find GPTyper helpful, you can keep using it by making a small donation.
+			</div>
+
+			<div class="tokens-choices-container">
+				<form action="/create-checkout-session" method="POST">
+                    <form action="/create-checkout-session" method="POST">
+                        <input type="hidden" name="amount" value="10K">
+                        <button class="donate-button" type="submit"><b>10K Tokens</b><br>$1.49</button>
+                    </form>
+
+                    <form action="/create-checkout-session" method="POST">
+                        <input type="hidden" name="amount" value="100K">
+                        <button class="donate-button" type="submit"><b>100K Tokens</b><br>$2.49</button>
+                    </form>
+
+                    <form action="/create-checkout-session" method="POST">
+                        <input type="hidden" name="amount" value="1M">
+                        <button class="donate-button" type="submit"><b>1M Tokens</b><br>$4.49</button>
+                    </form>
+				</form>
+				<!-- <form action="/create-checkout-session" method="POST">
+					<button class="donate-button buy-1m" type="submit">1M Tokens<br>£3.20</button>
+				</form> -->
+			</div>
+
+			<div class="large-popup-disclaimer tokens-popup-disclaimer">
+				1 million tokens is enough for several large essays, or around 10 hours of suggestions. Tokens can be used on any device with this account (ID: <span class="email-placeholder">not found</span>).
+			</div>
+			<div class="large-popup-close tokens-popup-close">x</div>
+		</div>
+	</div>
+
+    <!-- NO LONGER NEEDED as login is now handled on webpage -->
+	<!-- <div class="large-popup-container login-popup-container">
+		<div class="large-popup login-popup">
+			<div class="large-popup-title login-popup-title">Login to GPTyper</div>
+
+			<div class="large-popup-desc login-popup-desc">
+				<p>GPTyper is an experimental writing app using the OpenAI API for hyper-predictive typing suggestions.</p>
+				
+				<p>User authentication is required to prevent abuse of the API. Please sign in below.</p>
+			</div>
+            
+            <div class="login-popup-button">
+				<a href="/auth/google" class="login-with-google-btn">Sign in with Google</a>
+			</div>
+
+			<div class="large-popup-disclaimer login-popup-disclaimer">
+                By logging in, you agree to the <a href="/terms_of_service">terms of service</a> and <a href="/privacy_policy">privacy policy</a>.
+			</div>
+		</div>
+	</div> -->
+
+	<div class="large-popup-container aicfg-popup-container">
+		<div class="large-popup aicfg-popup">
+			<div class="large-popup-title aicfg-popup-title">
+                Predictions Config
+            </div>
+
+            <div class="aicfg-demo">
+                <span class="demo-context-short aicfg-demo-context">
+                    The King Charles Cavalier Spaniel is a small breed of dog known for its friendly and affectionate nature. They have a silky coat with long and floppy ears. <span class="demo-context-highlighted">They're often said to make great companions due to their</span>
+                </span>
+                <span class="demo-context-medium aicfg-demo-context">
+                    The King Charles Cavalier Spaniel is a small breed of dog known for its friendly and affectionate nature. <span class="demo-context-highlighted">They have a silky coat with long and floppy ears. They're often said to make great companions due to their</span>
+                </span>
+                <span class="demo-context-long aicfg-demo-context">
+                    <span class="demo-context-highlighted">The King Charles Cavalier Spaniel is a small breed of dog known for its friendly and affectionate nature. They have a silky coat with long and floppy ears. They're often said to make great companions due to their</span>
+                </span>
+
+                <span class="demo-suggestion-text aicfg-demo-suggestion suggestion-visible">
+                    loving personality
+                </span>
+            </div>
+
+            <div class="large-popup-disclaimer aicfg-costestimate">
+                Tokens per suggestion:
+                <span class="aicfg-costestimate-value">?</span>
+            </div>
+
+            <div class="large-popup-desc aicfg-popup-desc members-only">
+                <div class="members-only-block">These options are available to members.</div>
+                <div class="slider-container">
+                    <span class="slider-label">Length:</span>
+                    <span class="slider-status responselength-status">?</span>
+                    <input type="range" min="0" max="3" value="1" class="slider" id="slider-responselength">
+                </div>
+                <div class="slider-container">
+                    <span class="slider-label">Relevance:</span>
+                    <span class="slider-status contextlength-status">?</span>
+                    <input type="range" min="0" max="3" value="2" class="slider" id="slider-contextlength">
+                </div>
+                <div class="slider-container">
+                    <span class="slider-label">Creativity:</span>
+                    <span class="slider-status creativity-status">?</span>
+                    <input type="range" min="0" max="3" value="1" class="slider" id="slider-creativity">
+                </div>
+                <div class="slider-container">
+                    <span class="slider-label">Delay:</span>
+                    <span class="slider-status delay-status">?</span>
+                    <input type="range" min="0" max="3" value="0" class="slider" id="slider-delay">
+                </div>
+                <!-- <div class="slider-container">
+                    <span class="slider-label">Highlight Context</span>
+                    <input type="checkbox" class="slider" id="slider-showcontext">
+                </div> -->
+            </div>
+
+            <div class="large-popup-done aicfg-popup-done">Done</div>
+
+			<div class="large-popup-close aicfg-popup-close">x</div>
+		</div>
+	</div>
+
+    <div class="editor-blur"></div>
+
+    <div class="footer">
+        <span>developed by <a href="https://jckpn.com">jack paine</a></span>
+    </div>
+
+	<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="../node_modules/quill/dist/quill.min.js"></script>
+	<script src="../node_modules/quill-image-resize-module/image-resize.min.js"></script>
+    
+	<script src="../static/js/editor-setup.js" defer></script>
+	<script src="../static/js/settings-menu.js" defer></script>
+	<script src="../static/js/aicfg.js" defer></script>
+	<script src="../static/js/gpt-suggest.js" defer></script>
+	<script src="../static/js/gpt-proofread.js" defer></script>
+	<script src="../static/js/keyboard-shortcuts.js" defer></script>
+	<script src="../static/js/focusmode.js" defer></script>
+	<script src="../static/js/file-manage.js" defer></script>
+</body>
+
+</html>

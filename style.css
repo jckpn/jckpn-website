@@ -34,6 +34,7 @@ body {
 .title-container .title-underthing {
   font-size: 1.1rem;
   opacity: 0.9;
+  margin-top: 0.5rem;
 }
 .title-container .links-container {
   margin-top: 2rem;

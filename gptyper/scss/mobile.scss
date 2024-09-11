@@ -1,0 +1,98 @@
+@import 'base';
+
+@media (max-width: 600px) {
+    .menubar-container .menubar {
+        .menubar-button {
+            margin-left: 8px !important;
+            padding: 0 0 0 6px;
+
+            span {
+                opacity: 0;
+                max-width: 0 !important;
+            }
+        }
+    }
+
+    .small-popup {
+        left: 0;
+        width: auto !important;
+    }
+
+    .large-popup-container {
+        background: var(--pure-white);
+
+        .large-popup {
+            width: calc(100vw - 40px);
+            top: 50% !important; // rather than 45%
+            max-width: 380px;
+            padding: 20px;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .large-popup-close {
+            margin: 12px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .menubar-container .menubar {
+        .menubar-button {
+            margin-left: 0 !important;
+        }
+
+        .menubar-logo {
+            margin-left: 25px;
+        }
+
+        .menubar-buttons-container {
+            margin-right: 20px;
+        }
+    }
+
+    #editor.ql-container > div.ql-editor {
+        padding-left: 3ch;
+        padding-right: 3ch;
+    }
+
+    .large-popup-container {
+        .large-popup {
+            .large-popup-title {
+                font-size: 20px !important;
+            }
+
+            .large-popup-desc {
+                font-size: 14px !important;
+            }
+        }
+    }
+
+    .tokens-popup-container {
+        .tokens-popup {
+            .tokens-choices-container {
+                display: block;
+            }
+
+            button.donate-button {
+                width: 120px;
+                height: 40px;
+                margin: 5px 0;
+            }
+        }
+    }
+
+    .aicfg-popup-container {
+        .aicfg-demo {
+            font-size: 14px !important;
+        }
+    }
+
+    body .footer {
+        span:not(:first-child) {
+            display: none;
+        }
+    }
+}
+
+

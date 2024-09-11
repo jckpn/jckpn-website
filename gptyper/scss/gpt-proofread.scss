@@ -1,0 +1,51 @@
+@import 'base';
+
+.gpt-proofread-container {
+    z-index: 10; // over editor but under menubar & footer
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+
+    .gpt-proofread-warning {
+        position: absolute; // position set in js
+        color: white;
+        background-color: var(--red-accent);
+        border-radius: 5px;
+        position: absolute;
+        left: 20px;
+        padding: 3px;
+        font-size: 14px;
+        line-height: 20px;
+        height: 20px;
+        overflow: hidden;
+        pointer-events: auto;
+        padding: 5px 8px 4px 8px;
+
+        border-radius: 8px;
+        max-width: 16px; // just to limit hover capture
+        background-color: transparent;
+        color: transparent;
+
+        transition: all $anim-dur-med $anim-curve;
+
+        &:hover {
+            max-width: 100%;
+            background-color: var(--red-accent);
+            color: white;
+            box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
+
+            &::after {
+                opacity: 0;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            top: 0; left: 0;
+            content: 'x';
+            color: var(--red-accent);
+            font-size: 22px;
+        }
+    }
+}
