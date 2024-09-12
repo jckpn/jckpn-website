@@ -190,9 +190,9 @@ $(function() { // BACKGROUND
     }
 
     detectURLHash();
-    // $(window).on('hashchange', () => {
-    //     detectURLHash();
-    // });
+    $(window).on('hashchange', () => {
+        detectURLHash();
+    });
 
     function detectURLHash() {
         let pageName = window.location.href.split('#')[1];
