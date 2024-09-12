@@ -1,0 +1,51 @@
+body {
+    background-color: #111;
+}
+
+.cube-container {
+    position: absolute;
+    top: 300px;
+    left: 300px;
+    width: 300px;
+    height: 300px;
+    perspective: 500px; // distance from z-axis
+    border: 2px solid #ff00ff;
+}
+
+
+.cube {
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+
+    .face {
+        position: absolute;
+        border: 2px solid #ccc;
+        width: 100%;
+        height: 100%;
+
+        &.front {
+            transform: translateZ(100px);
+        }
+
+        &.back {
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        &.right {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        &.left {
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        &.top {
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        &.bottom {
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+    }
+}
