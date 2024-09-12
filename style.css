@@ -13,45 +13,9 @@ html {
 }
 
 body {
-  background-color: #111;
+  background-color: #1b1b1b;
   overflow-y: hidden;
   font-family: "Now";
-}
-
-.title-container {
-  position: absolute;
-  left: -60px;
-}
-.title-container .title {
-  font-family: "Antipasto";
-  font-size: 5.5rem;
-  margin-left: 0.07ch;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  opacity: 1;
-}
-.title-container .title-underthing {
-  font-size: 1.1rem;
-  opacity: 0.9;
-  margin-top: 0.5rem;
-}
-.title-container .links-container {
-  margin-top: 2rem;
-}
-.title-container .links-container a {
-  text-decoration: none;
-  margin: 0 1ch;
-  font-weight: bold;
-  letter-spacing: 0.08ch;
-  cursor: pointer;
-}
-.title-container .links-container a::before, .title-container .links-container a::after {
-  font-size: 80%;
-  margin-right: 0.5ch;
-}
-.title-container .links-container a::before {
-  content: ">";
 }
 
 .content-container {
@@ -64,6 +28,48 @@ body {
   transform: translateX(-50%);
   color: #c0d0d0;
   transition: all 0.4s cubic-bezier(0.2, 1, 0.4, 1);
+}
+.content-container .title-container {
+  position: absolute;
+  left: -50px;
+  top: -150px;
+}
+.content-container .title-container .woof {
+  position: fixed;
+  width: 450px;
+  bottom: -100px;
+  right: -50px;
+}
+.content-container .title-container .title {
+  font-family: "Antipasto";
+  font-size: 5.5rem;
+  margin-left: 0.07ch;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  opacity: 1;
+}
+.content-container .title-container .title-underthing {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-top: 0.5rem;
+}
+.content-container .title-container .links-container {
+  margin-top: 2rem;
+}
+.content-container .title-container .links-container a {
+  text-decoration: none;
+  margin: 0 1ch;
+  font-weight: bold;
+  letter-spacing: 0.08ch;
+  cursor: pointer;
+}
+.content-container .title-container .links-container a::before, .content-container .title-container .links-container a::after {
+  font-size: 80%;
+  margin-right: 0.5ch;
+}
+.content-container .title-container .links-container a::before {
+  content: ">";
 }
 
 .stuff-container {

@@ -1,4 +1,4 @@
-$bg-color: #111;
+$bg-color: #1b1b1b;
 $base-color: #c0d0d0;
 $anim-curve: cubic-bezier(.2, 1, .4, 1);
 $opacity-5: 1;
@@ -16,6 +16,7 @@ $content-max-width: 860px;
     font-weight: normal;
     src: url('./assets/antipasto-light.ttf') format('truetype');
 }
+
 @font-face {
     font-family: Now;
     font-weight: normal;
@@ -33,54 +34,68 @@ body {
     font-family: 'Now';
 }
 
-.title-container {
-    position: absolute;
-    left: -60px;
-    
-    .title {
-        font-family: 'Antipasto';
-        font-size: 5.5rem;
-        margin-left: .07ch;
-        user-select: none;
-        opacity: $opacity-5;
-    }
-
-    .title-underthing {
-        font-size: 1.1rem;
-        opacity: $opacity-4;
-        margin-top: 0.5rem;
-    }
-
-    .links-container {
-        margin-top: 2rem;
-
-        a {
-            text-decoration: none;
-            margin: 0 1ch;
-            font-weight: bold;
-            letter-spacing: .08ch;
-            cursor: pointer;
-
-            &::before, &::after {
-                font-size: 80%;
-                margin-right: .5ch;
-            }
-            &::before {
-                content: '>';
-            }
-        }
-    }
-}
-
 
 .content-container {
     position: absolute;
-    top: 50%; bottom: 30%;
+    top: 50%;
+    bottom: 30%;
     width: 60%;
     max-width: $content-max-width;
-    left: 50%; transform: translateX(-50%);
+    left: 50%;
+    transform: translateX(-50%);
     color: $base-color;
     transition: all $anim-dur-short $anim-curve;
+
+
+    .title-container {
+        position: absolute;
+        left: -50px;
+        top: -150px;
+
+
+        .woof {
+            position: fixed;
+            width: 450px;
+            bottom: -100px;
+            right: -50px;
+        }
+
+        .title {
+            font-family: 'Antipasto';
+            font-size: 5.5rem;
+            margin-left: .07ch;
+            user-select: none;
+            opacity: $opacity-5;
+        }
+
+        .title-underthing {
+            font-size: 1.1rem;
+            opacity: $opacity-4;
+            margin-top: 0.5rem;
+        }
+
+        .links-container {
+            margin-top: 2rem;
+
+            a {
+                text-decoration: none;
+                margin: 0 1ch;
+                font-weight: bold;
+                letter-spacing: .08ch;
+                cursor: pointer;
+
+                &::before,
+                &::after {
+                    font-size: 80%;
+                    margin-right: .5ch;
+                }
+
+                &::before {
+                    content: '>';
+                }
+            }
+        }
+    }
 }
 
 .stuff-container {
@@ -104,7 +119,7 @@ body {
     }
 }
 
-.content-container.page-home {    
+.content-container.page-home {
     .title-container {
         opacity: 1;
         pointer-events: auto;
@@ -145,7 +160,9 @@ body {
 }
 
 .section-projects {
-    a { text-decoration: none; }
+    a {
+        text-decoration: none;
+    }
 
     .project-link {
         display: inline-block;
@@ -203,6 +220,7 @@ body {
             opacity: 1;
             filter: none;
         }
+
         &:not(.chosen-section) {
             opacity: $opacity-1;
             filter: blur(1px) grayscale(100%);
@@ -268,7 +286,10 @@ body {
     z-index: -1;
 
     position: fixed;
-    left: 0; top: 0; right: 0; bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
 
     svg {
         position: absolute;
@@ -324,7 +345,7 @@ a {
 //         transform: translate(-50%, -50%);
 //         text-align: center;
 //     }
-        
+
 //     .stuff-container {
 //         left: calc(50% - #{$content-max-width/2});
 //     }
@@ -338,20 +359,20 @@ a {
             left: 0;
             width: 100%;
             text-align: center;
-    
+
             .title-underthing {
                 font-size: 1rem;
             }
-    
+
             .links-container {
                 margin-top: 3rem;
-    
+
                 a {
                     margin: 8px 0;
                     display: block;
                     width: 100%;
                 }
-    
+
                 a::after {
                     content: ' <';
                 }
@@ -378,9 +399,10 @@ a {
 .footer {
     position: fixed;
     bottom: 0;
-    left: 50%; transform: translateX(-50%);
+    left: 50%;
+    transform: translateX(-50%);
     color: $base-color;
-    
+
     padding: 10%; // for fade in when mouse is close
     padding-bottom: 15px;
     opacity: $opacity-1;
