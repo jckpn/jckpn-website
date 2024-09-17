@@ -1,12 +1,12 @@
 @font-face {
   font-family: Antipasto;
   font-weight: normal;
-  src: url("./assets/antipasto-light.ttf") format("truetype");
+  src: url("../assets/antipasto-light.ttf") format("truetype");
 }
 @font-face {
   font-family: Now;
   font-weight: normal;
-  src: url("./assets/Now-Thin.otf") format("truetype");
+  src: url("../assets/Now-Thin.otf") format("truetype");
 }
 html {
   font-size: 20px;
@@ -20,7 +20,6 @@ body {
 
 .title-container {
   position: absolute;
-  left: -60px;
 }
 .title-container .title {
   font-family: "Antipasto";
@@ -31,7 +30,7 @@ body {
           user-select: none;
   opacity: 1;
 }
-.title-container .title-underthing {
+.title-container .subtitle {
   font-size: 1.1rem;
   opacity: 0.9;
   margin-top: 0.5rem;
@@ -283,7 +282,7 @@ a:hover {
     width: 100%;
     text-align: center;
   }
-  .content-container .title-container .title-underthing {
+  .content-container .title-container .subtitle {
     font-size: 1rem;
   }
   .content-container .title-container .links-container {

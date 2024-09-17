@@ -1,0 +1,16 @@
+@import 'variables';
+
+
+@media screen and (max-width: 1000px) {
+    div.container {
+        max-width: calc(100% - 135px);
+        left: 90px;
+        transform: translate(0, -50%);
+
+        &.title-container {
+            .title {
+                font-size: 4rem;
+            }
+        }
+    }
+}
