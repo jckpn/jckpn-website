@@ -1,4 +1,4 @@
-@import 'variables';
+@import 'utils';
 
 
 .background {
@@ -9,6 +9,8 @@
     bottom: 0;
     width: 100%;
     height: 100%;
+    
+    background-color: $color-bg;
 
     animation: shoot-down $anim-dur-med $anim-curve forwards;
 

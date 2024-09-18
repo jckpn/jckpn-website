@@ -8,13 +8,57 @@
   font-weight: normal;
   src: url("../assets/Now-Thin.otf") format("truetype");
 }
+@keyframes title-fade-in {
+  from {
+    opacity: 0.5;
+    top: 45%;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes content-fade-in {
+  from {
+    opacity: 0.5;
+    top: 55%;
+  }
+  to {
+    opacity: 1;
+  }
+}
 @media screen and (max-width: 1000px) {
   div.container {
-    max-width: calc(100% - 135px);
-    left: 90px;
-    transform: translate(0, -50%);
+    max-width: calc(100% - 100px);
+  }
+  div.container .back-button {
+    left: -20px;
+  }
+  div.container .header {
+    margin-left: 50px;
+  }
+  div.container.title-container {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 600px) {
+  div.container {
+    width: calc(100% - 100px);
   }
   div.container.title-container .title {
-    font-size: 4rem;
+    font-size: 3rem;
+  }
+  div.container.title-container .subtitle {
+    font-size: 1.2rem;
+    width: 250px;
+    margin: 10px auto;
+  }
+  div.container .footer {
+    font-size: 1rem;
+  }
+  div.container img.me {
+    width: 135px;
   }
 }/*# sourceMappingURL=mobile.css.map */

@@ -1,0 +1,53 @@
+// COLORS
+$color-bg: #111;
+$color-fg: #c0d0d0;
+
+
+// OPACITY
+$opacity-max: 1;
+$opacity-high: .75;
+$opacity-med: .5;
+$opacity-low: .25;
+
+
+// FONTS
+@font-face {
+    font-family: Antipasto;
+    font-weight: normal;
+    src: url('../assets/antipasto-light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Now;
+    font-weight: normal;
+    src: url('../assets/Now-Thin.otf') format('truetype');
+}
+
+
+// ANIMATIONS
+$anim-curve: cubic-bezier(.2, 1, .4, 1); // snappy ease-out
+$anim-dur-long: .8s;
+$anim-dur-med: .6s;
+$anim-dur-short: .4s;
+
+@keyframes title-fade-in {
+    from {
+        opacity: $opacity-med;
+        top: 45%;
+    }
+
+    to {
+        opacity: 1; // multiplier
+    }
+}
+
+@keyframes content-fade-in {
+    from {
+        opacity: $opacity-med;
+        top: 55%;
+    }
+
+    to {
+        opacity: 1; // multiplier
+    }
+}

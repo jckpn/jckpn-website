@@ -1,16 +1,50 @@
-@import 'variables';
+@import 'utils';
 
 
 @media screen and (max-width: 1000px) {
     div.container {
-        max-width: calc(100% - 135px);
-        left: 90px;
-        transform: translate(0, -50%);
+        max-width: calc(100% - 100px);
+
+
+        .back-button {
+            left: -20px;
+        }
+
+        .header {
+            margin-left: 50px;
+        }
+
+        &.title-container {
+            width: 100%;
+            max-width: 100%;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    div.container {
+        width: calc(100% - 100px); // not sure why max-width wouldn't apply here
 
         &.title-container {
             .title {
-                font-size: 4rem;
+                font-size: 3rem;
             }
+
+            .subtitle {
+                font-size: 1.2rem;
+                width: 250px;
+                margin: 10px auto;
+            }
+        }
+
+        .footer {
+            font-size: 1rem;
+        }
+
+        img.me {
+            width: 135px;
         }
     }
 }

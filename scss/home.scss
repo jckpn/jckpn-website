@@ -1,0 +1,42 @@
+@import 'utils';
+
+
+.title-container {
+    animation-name: title-fade-in;
+
+    .title {
+        font-family: 'Antipasto';
+        font-size: 5.5rem;
+        margin-left: .07ch;
+        user-select: none;
+        opacity: $opacity-max;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+        opacity: $opacity-med;
+        margin-top: 0.5rem;
+    }
+
+    .links-container {
+        margin-top: 2rem;
+
+        a {
+            text-decoration: none;
+            margin: 0 1ch;
+            font-weight: bold;
+            letter-spacing: .08ch;
+            cursor: pointer;
+
+            &::before,
+            &::after {
+                font-size: 80%;
+                margin-right: .5ch;
+            }
+
+            &::before {
+                content: '>';
+            }
+        }
+    }
+}

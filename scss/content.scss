@@ -1,18 +1,17 @@
-@import 'variables';
+@import 'utils';
 
 
 .container {
     position: absolute;
     top: 50%;
-    bottom: 50%;
-    width: 800px;
-    max-width: calc(100% - 150px);
-    height: auto;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: $base-color;
+    background-color: #ff00ff;
+    margin: auto;
+    width: calc(100% - 150px);
+    max-width: 800px;
     animation: content-fade-in $anim-dur-med $anim-curve forwards;
-    display: table; // match height of child
+    color: $color-fg;
 
     .header {
         font-family: 'Antipasto';
@@ -23,72 +22,9 @@
     }
 
     p {
-        color: rgba($base-color, $opacity-4);
-    }
-
-    &.title-container {
-        animation-name: title-fade-in;
-
-        .title {
-            font-family: 'Antipasto';
-            font-size: 5.5rem;
-            margin-left: .07ch;
-            user-select: none;
-            opacity: $opacity-max;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            opacity: $opacity-4;
-            margin-top: 0.5rem;
-        }
-
-        .links-container {
-            margin-top: 2rem;
-
-            a {
-                text-decoration: none;
-                margin: 0 1ch;
-                font-weight: bold;
-                letter-spacing: .08ch;
-                cursor: pointer;
-
-                &::before,
-                &::after {
-                    font-size: 80%;
-                    margin-right: .5ch;
-                }
-
-                &::before {
-                    content: '>';
-                }
-            }
-        }
+        opacity: $opacity-high;
     }
 }
-
-@keyframes title-fade-in {
-    from {
-        opacity: $opacity-1;
-        top: 45%;
-    }
-
-    to {
-        opacity: $opacity-max;
-    }
-}
-
-@keyframes content-fade-in {
-    from {
-        opacity: $opacity-1;
-        top: 55%;
-    }
-
-    to {
-        opacity: $opacity-max;
-    }
-}
-
 
 
 .back-button {
@@ -100,7 +36,7 @@
     transform: scale(67%);
     padding: 2px 20px 20px 10px;
     cursor: pointer; // handle click in js
-    opacity: $opacity-2;
+    opacity: $opacity-med;
     transition: all $anim-dur-med $anim-curve;
 
     &:hover {
@@ -112,8 +48,8 @@
         margin: 15px auto;
         width: 25px;
         height: 25px;
-        border-top: 3px solid $base-color;
-        border-left: 3px solid $base-color;
+        border-top: 3px solid $color-fg;
+        border-left: 3px solid $color-fg;
         transform: rotate(-45deg);
 
         &::after {
@@ -121,7 +57,7 @@
             display: block;
             width: 3px;
             height: 45px;
-            background-color: $base-color;
+            background-color: $color-fg;
             transform: rotate(-45deg) translate(15px, 4px);
             left: 0;
             top: 0;

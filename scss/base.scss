@@ -1,21 +1,27 @@
-@import 'variables';
+@import 'utils';
 
 
-html,
+html {
+    font-size: 20px; // set 1rem
+}
+
 body {
-    font-size: 20px;
     font-family: 'Now';
-    background-color: $bg-color;
+    background: $color-bg;
+    color: $color-fg;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
 }
 
 a {
-    color: rgba($base-color, $opacity-3);
+    color: rgba($color-fg, $opacity-med);
     font-weight: bold;
 
     transition: color $anim-dur-short $anim-curve;
 
     &:hover {
-        color: rgba($base-color, $opacity-max);
+        color: rgba($color-fg, $opacity-max);
     }
 }
 
@@ -24,11 +30,10 @@ a {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    color: $base-color;
+    color: $color-fg;
 
-    padding: 10%; // for fade in when mouse is close
     padding-bottom: 15px;
-    opacity: $opacity-1;
+    opacity: $opacity-low;
     font-size: .75rem;
     text-align: right;
     transition: all $anim-dur-med $anim-curve;

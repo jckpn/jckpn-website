@@ -8,18 +8,35 @@
   font-weight: normal;
   src: url("../assets/Now-Thin.otf") format("truetype");
 }
+@keyframes title-fade-in {
+  from {
+    opacity: 0.5;
+    top: 45%;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes content-fade-in {
+  from {
+    opacity: 0.5;
+    top: 55%;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .container {
   position: absolute;
   top: 50%;
-  bottom: 50%;
-  width: 800px;
-  max-width: calc(100% - 150px);
-  height: auto;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #c0d0d0;
+  background-color: #ff00ff;
+  margin: auto;
+  width: calc(100% - 150px);
+  max-width: 800px;
   animation: content-fade-in 0.6s cubic-bezier(0.2, 1, 0.4, 1) forwards;
-  display: table;
+  color: #c0d0d0;
 }
 .container .header {
   font-family: "Antipasto";
@@ -31,61 +48,9 @@
   opacity: 1;
 }
 .container p {
-  color: rgba(192, 208, 208, 0.8);
-}
-.container.title-container {
-  animation-name: title-fade-in;
-}
-.container.title-container .title {
-  font-family: "Antipasto";
-  font-size: 5.5rem;
-  margin-left: 0.07ch;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  opacity: 1;
-}
-.container.title-container .subtitle {
-  font-size: 1.1rem;
-  opacity: 0.8;
-  margin-top: 0.5rem;
-}
-.container.title-container .links-container {
-  margin-top: 2rem;
-}
-.container.title-container .links-container a {
-  text-decoration: none;
-  margin: 0 1ch;
-  font-weight: bold;
-  letter-spacing: 0.08ch;
-  cursor: pointer;
-}
-.container.title-container .links-container a::before, .container.title-container .links-container a::after {
-  font-size: 80%;
-  margin-right: 0.5ch;
-}
-.container.title-container .links-container a::before {
-  content: ">";
+  opacity: 0.75;
 }
 
-@keyframes title-fade-in {
-  from {
-    opacity: 0.2;
-    top: 45%;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes content-fade-in {
-  from {
-    opacity: 0.2;
-    top: 55%;
-  }
-  to {
-    opacity: 1;
-  }
-}
 .back-button {
   position: absolute;
   width: 40px;
@@ -95,7 +60,7 @@
   transform: scale(67%);
   padding: 2px 20px 20px 10px;
   cursor: pointer;
-  opacity: 0.4;
+  opacity: 0.5;
   transition: all 0.6s cubic-bezier(0.2, 1, 0.4, 1);
 }
 .back-button:hover {
