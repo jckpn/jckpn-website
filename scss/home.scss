@@ -1,7 +1,7 @@
 @import 'utils';
 
 
-.title-container {
+.container.title-container {
     animation-name: title-fade-in;
 
     .title {
@@ -38,5 +38,16 @@
                 content: '>';
             }
         }
+    }
+}
+
+@keyframes title-fade-in {
+    from {
+        opacity: $opacity-med;
+        top: 0%;
+    }
+
+    to {
+        opacity: 1; // multiplier
     }
 }

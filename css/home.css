@@ -8,28 +8,10 @@
   font-weight: normal;
   src: url("../assets/Now-Thin.otf") format("truetype");
 }
-@keyframes title-fade-in {
-  from {
-    opacity: 0.5;
-    top: 45%;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes content-fade-in {
-  from {
-    opacity: 0.5;
-    top: 55%;
-  }
-  to {
-    opacity: 1;
-  }
-}
-.title-container {
+.container.title-container {
   animation-name: title-fade-in;
 }
-.title-container .title {
+.container.title-container .title {
   font-family: "Antipasto";
   font-size: 5.5rem;
   margin-left: 0.07ch;
@@ -38,25 +20,35 @@
           user-select: none;
   opacity: 1;
 }
-.title-container .subtitle {
+.container.title-container .subtitle {
   font-size: 1.1rem;
   opacity: 0.5;
   margin-top: 0.5rem;
 }
-.title-container .links-container {
+.container.title-container .links-container {
   margin-top: 2rem;
 }
-.title-container .links-container a {
+.container.title-container .links-container a {
   text-decoration: none;
   margin: 0 1ch;
   font-weight: bold;
   letter-spacing: 0.08ch;
   cursor: pointer;
 }
-.title-container .links-container a::before, .title-container .links-container a::after {
+.container.title-container .links-container a::before, .container.title-container .links-container a::after {
   font-size: 80%;
   margin-right: 0.5ch;
 }
-.title-container .links-container a::before {
+.container.title-container .links-container a::before {
   content: ">";
+}
+
+@keyframes title-fade-in {
+  from {
+    opacity: 0.5;
+    top: 0%;
+  }
+  to {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=home.css.map */

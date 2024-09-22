@@ -46,7 +46,7 @@
 
 @keyframes shoot-down {
   0% {
-    bottom: 50%;
+    bottom: 20rem;
   }
 }
 @keyframes shoot-up-about {

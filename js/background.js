@@ -2,7 +2,6 @@ $(() => {
     var mouseX = 50;
     var mouseY = 50;
 
-    setInterval(updateBG, 100);
     updateBG();
 
     // on move mouse
@@ -16,6 +15,8 @@ $(() => {
         // get mouse x and y as % of window
         mouseX = e.pageX / $(window).width() * 100;
         mouseY = e.pageY / $(window).height() * 100;
+
+        updateBG();
     });
 
     function updateBG() {

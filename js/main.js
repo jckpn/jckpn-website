@@ -1,3 +1,3 @@
 $('.back-button').click(() => {
-    window.history.back();
+    window.location.href = '/';
 });

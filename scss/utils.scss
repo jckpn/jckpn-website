@@ -29,25 +29,3 @@ $anim-curve: cubic-bezier(.2, 1, .4, 1); // snappy ease-out
 $anim-dur-long: .8s;
 $anim-dur-med: .6s;
 $anim-dur-short: .4s;
-
-@keyframes title-fade-in {
-    from {
-        opacity: $opacity-med;
-        top: 45%;
-    }
-
-    to {
-        opacity: 1; // multiplier
-    }
-}
-
-@keyframes content-fade-in {
-    from {
-        opacity: $opacity-med;
-        top: 55%;
-    }
-
-    to {
-        opacity: 1; // multiplier
-    }
-}

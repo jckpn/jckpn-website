@@ -25,6 +25,17 @@
     }
 }
 
+@keyframes content-fade-in {
+    from {
+        opacity: $opacity-med;
+        top: 60%;
+    }
+
+    to {
+        opacity: 1; // multiplier
+    }
+}
+
 
 .back-button {
     position: absolute;
@@ -63,6 +74,7 @@
         }
     }
 }
+
 
 img.me {
     margin-top: .25rem;
