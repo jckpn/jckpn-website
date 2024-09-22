@@ -76,7 +76,7 @@ a {
 
 .container>* {
     animation-name: slide-in;
-    animation-duration: $anim-dur-short;
+    animation-duration: $anim-dur-med;
     animation-timing-function: $anim-curve;
     animation-fill-mode: both;
 
@@ -105,6 +105,6 @@ a {
 @keyframes slide-in {
     0% {
         opacity: 0;
-        transform: translateX(-50px);
+        transform: translateY(20px);
     }
 }
