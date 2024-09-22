@@ -1,9 +1,10 @@
 $(() => {
-    // reload page properly to get animation
-    var e = performance.getEntriesByType("navigation");
-    if (e.length > 0 && e[0].type === "back_forward") {
-        window.location.reload();
-    }
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            // reload if page is loaded from cache (e.g. user clicked back)
+            window.location.reload();
+        }
+    });
 
     updateBG(0, 0);
 
