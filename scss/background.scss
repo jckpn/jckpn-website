@@ -24,22 +24,23 @@
         height: 100%;
 
         stroke-width: 3px;
-        // fill: rgba($color-fg, 0.1);
         fill: none;
 
         path {
             transition: d;
-            transition-duration: 2s;
             transition-timing-function: $anim-curve;
-            stroke: $color-fg;
         }
 
         path#waves-path-1 {
             opacity: $opacity-low;
+            stroke: #a0d0f0;
+            transition-duration: 1s;
         }
 
         path#waves-path-2 {
-            opacity: $opacity-med;
+            opacity: $opacity-low;
+            stroke: #d0f0d0;
+            transition-duration: 2s;
         }
     }
 }

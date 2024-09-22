@@ -23,14 +23,10 @@
   font-family: "Antipasto";
   font-weight: normal;
   font-size: 3em;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  cursor: pointer;
   opacity: 1;
 }
 .container p {
-  opacity: 0.75;
+  color: rgba(192, 208, 208, 0.75);
 }
 
 @keyframes content-fade-in {

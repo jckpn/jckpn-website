@@ -6,7 +6,7 @@
 @font-face {
   font-family: Now;
   font-weight: normal;
-  src: url("../assets/Now-Thin.otf") format("truetype");
+  src: url("../assets/Now-Thin.otf") format("opentype");
 }
 .background {
   z-index: -1;
@@ -30,15 +30,17 @@
 }
 .background svg path {
   transition: d;
-  transition-duration: 2s;
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-  stroke: #c0d0d0;
 }
 .background svg path#waves-path-1 {
   opacity: 0.25;
+  stroke: #a0d0f0;
+  transition-duration: 1s;
 }
 .background svg path#waves-path-2 {
-  opacity: 0.5;
+  opacity: 0.25;
+  stroke: #d0f0d0;
+  transition-duration: 2s;
 }
 
 @keyframes shoot-down {

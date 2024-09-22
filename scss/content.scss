@@ -16,13 +16,11 @@
         font-family: 'Antipasto';
         font-weight: normal;
         font-size: 3em;
-        user-select: none;
-        cursor: pointer; // click added in jss
         opacity: $opacity-max;
     }
 
     p {
-        opacity: $opacity-high;
+        color: rgba($color-fg, $opacity-high);
     }
 }
 
