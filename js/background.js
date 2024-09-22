@@ -1,6 +1,6 @@
 $(() => {
-    window.addEventListener('pageshow', function(event) {
-        if (event.persisted) {
+    window.addEventListener('pageshow', function(e) {
+        if (e.persisted) {
             // reload if page is loaded from cache (e.g. user clicked back)
             window.location.reload();
         }
