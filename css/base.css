@@ -22,12 +22,29 @@ body {
 }
 
 a {
-  color: rgba(192, 208, 208, 0.5);
+  position: relative;
+  color: #c0d0d0;
+  opacity: 0.5;
   font-weight: bold;
+  text-decoration: none;
   transition: all 0.4s cubic-bezier(0.2, 1, 0.4, 1);
 }
+a::after {
+  content: "";
+  background-color: #c0d0d0;
+  position: absolute;
+  height: 1px;
+  bottom: 0;
+  opacity: 0.75;
+  transition: all 0.4s cubic-bezier(0.2, 1, 0.4, 1);
+  left: 0;
+  width: 100%;
+}
 a:hover {
-  color: #c0d0d0;
+  opacity: 1;
+}
+a:hover::after {
+  opacity: 1;
 }
 
 .footer {

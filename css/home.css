@@ -35,27 +35,6 @@
   font-weight: bold;
   cursor: pointer;
 }
-.container.title-container .links-container a::before {
-  font-size: 80%;
-  margin-right: 0.5ch;
-  content: ">";
-}
-.container.title-container .links-container a::after {
-  content: "";
-  background-color: #c0d0d0;
-  position: absolute;
-  height: 1px;
-  bottom: 0;
-  opacity: 0;
-  transition: all 0.4s cubic-bezier(0.2, 1, 0.4, 1);
-  width: 0;
-  left: 50%;
-}
-.container.title-container .links-container a:hover::after {
-  opacity: 0.75;
-  left: 0;
-  width: 100%;
-}
 
 @keyframes title-fade-in {
   from {

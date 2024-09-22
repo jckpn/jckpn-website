@@ -15,13 +15,33 @@ body {
 }
 
 a {
-    color: rgba($color-fg, $opacity-med);
+    position: relative; // required for hover underline to work properly
+    color: $color-fg;
+    opacity: $opacity-med;
     font-weight: bold;
+    text-decoration: none;
 
     transition: all $anim-dur-short $anim-curve;
 
+    &::after {
+        content: '';
+        background-color: $color-fg;
+        position: absolute;
+        height: 1px;
+        bottom: 0;
+        opacity: $opacity-high;
+
+        transition: all $anim-dur-short $anim-curve;
+        left: 0;
+        width: 100%;
+    }
+
     &:hover {
-        color: rgba($color-fg, $opacity-max);
+        opacity: $opacity-max;
+
+        &::after {
+            opacity: $opacity-max;
+        }
     }
 }
 

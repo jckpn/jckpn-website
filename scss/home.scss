@@ -28,30 +28,11 @@
             font-weight: bold;
             cursor: pointer;
 
-            &::before {
-                font-size: 80%;
-                margin-right: .5ch;
-                content: '>';
-            }
-
-            &::after {
-                content: '';
-                background-color: $color-fg;
-                position: absolute;
-                height: 1px;
-                bottom: 0;
-                opacity: 0;
-
-                transition: all $anim-dur-short $anim-curve;
-                width: 0;
-                left: 50%;
-            }
-
-            &:hover::after {
-                opacity: $opacity-high;
-                left: 0;
-                width: 100%;
-            }
+            // &::before {
+            //     font-size: 80%;
+            //     margin-right: .5ch;
+            //     content: '>';
+            // }
         }
     }
 }

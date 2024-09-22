@@ -28,8 +28,8 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  fill: none;
   stroke-width: 3px;
+  fill: none;
 }
 .background svg path {
   transition: d;
@@ -46,12 +46,12 @@
 
 @keyframes shoot-down {
   0% {
-    bottom: 20rem;
+    bottom: 22rem;
   }
 }
 @keyframes shoot-up-about {
   100% {
-    bottom: 30rem;
+    bottom: 28rem;
   }
 }
 @keyframes shoot-up-contact {
