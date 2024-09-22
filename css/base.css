@@ -32,8 +32,7 @@ a {
 }
 a::after {
   content: "..";
-  font-size: 0.9rem;
-  vertical-align: top;
+  font-size: 90%;
   -webkit-mask-image: url("../assets/link.svg");
           mask-image: url("../assets/link.svg");
   -webkit-mask-size: contain;
