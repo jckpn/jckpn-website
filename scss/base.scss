@@ -18,7 +18,7 @@ a {
     color: rgba($color-fg, $opacity-med);
     font-weight: bold;
 
-    transition: color $anim-dur-short $anim-curve;
+    transition: all $anim-dur-short $anim-curve;
 
     &:hover {
         color: rgba($color-fg, $opacity-max);

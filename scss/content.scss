@@ -9,14 +9,14 @@
     margin: auto;
     width: calc(100% - 150px);
     max-width: 800px;
-    animation: content-fade-in $anim-dur-med $anim-curve forwards;
+    animation: content-fade-in $anim-dur-long $anim-curve forwards;
     color: $color-fg;
 
     .header {
         font-family: 'Antipasto';
         font-size: 3em;
         user-select: none;
-        cursor: pointer; // click added in js
+        cursor: pointer; // click added in jss
         opacity: $opacity-max;
     }
 
@@ -27,12 +27,12 @@
 
 @keyframes content-fade-in {
     from {
-        opacity: $opacity-med;
+        opacity: 0;
         top: 60%;
     }
 
     to {
-        opacity: 1; // multiplier
+        opacity: 1;
     }
 }
 

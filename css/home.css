@@ -22,31 +22,45 @@
 }
 .container.title-container .subtitle {
   font-size: 1.1rem;
-  opacity: 0.5;
+  opacity: 0.75;
   margin-top: 0.5rem;
 }
 .container.title-container .links-container {
   margin-top: 2rem;
 }
 .container.title-container .links-container a {
+  position: relative;
   text-decoration: none;
   margin: 0 1ch;
   font-weight: bold;
-  letter-spacing: 0.08ch;
   cursor: pointer;
 }
-.container.title-container .links-container a::before, .container.title-container .links-container a::after {
+.container.title-container .links-container a::before {
   font-size: 80%;
   margin-right: 0.5ch;
-}
-.container.title-container .links-container a::before {
   content: ">";
+}
+.container.title-container .links-container a::after {
+  content: "";
+  background-color: #c0d0d0;
+  position: absolute;
+  height: 1px;
+  bottom: 0;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.2, 1, 0.4, 1);
+  width: 0;
+  left: 50%;
+}
+.container.title-container .links-container a:hover::after {
+  opacity: 0.75;
+  left: 0;
+  width: 100%;
 }
 
 @keyframes title-fade-in {
   from {
-    opacity: 0.5;
-    top: 0%;
+    opacity: 0;
+    top: 40%;
   }
   to {
     opacity: 1;

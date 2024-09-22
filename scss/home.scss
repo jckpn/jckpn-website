@@ -14,7 +14,7 @@
 
     .subtitle {
         font-size: 1.1rem;
-        opacity: $opacity-med;
+        opacity: $opacity-high;
         margin-top: 0.5rem;
     }
 
@@ -22,20 +22,35 @@
         margin-top: 2rem;
 
         a {
+            position: relative;
             text-decoration: none;
             margin: 0 1ch;
             font-weight: bold;
-            letter-spacing: .08ch;
             cursor: pointer;
 
-            &::before,
-            &::after {
+            &::before {
                 font-size: 80%;
                 margin-right: .5ch;
+                content: '>';
             }
 
-            &::before {
-                content: '>';
+            &::after {
+                content: '';
+                background-color: $color-fg;
+                position: absolute;
+                height: 1px;
+                bottom: 0;
+                opacity: 0;
+
+                transition: all $anim-dur-short $anim-curve;
+                width: 0;
+                left: 50%;
+            }
+
+            &:hover::after {
+                opacity: $opacity-high;
+                left: 0;
+                width: 100%;
             }
         }
     }
@@ -43,11 +58,11 @@
 
 @keyframes title-fade-in {
     from {
-        opacity: $opacity-med;
-        top: 0%;
+        opacity: 0;
+        top: 40%;
     }
 
     to {
-        opacity: 1; // multiplier
+        opacity: 1;
     }
 }
