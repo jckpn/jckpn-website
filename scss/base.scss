@@ -72,3 +72,39 @@ a {
     text-align: right;
     transition: all $anim-dur-med $anim-curve;
 }
+
+
+.container>* {
+    animation-name: slide-in;
+    animation-duration: $anim-dur-short;
+    animation-timing-function: $anim-curve;
+    animation-fill-mode: both;
+
+    // animation-delay: .1s;
+
+    // &.title, &.header, &.back-button {
+    //     animation-name: none;
+    //     animation-delay: 0s;
+    // }
+
+    // &.links-container {
+    //     animation-delay: .2s;
+    // }
+
+    &:nth-child(1) {
+        animation: none;
+    }
+
+    @for $i from 1 through 9 {
+        &:nth-child(#{$i+1}) {
+            animation-delay: $i * .1s;
+        }
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+}
