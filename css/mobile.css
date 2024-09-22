@@ -6,9 +6,12 @@
 @font-face {
   font-family: Now;
   font-weight: normal;
-  src: url("../assets/Now-Thin.otf") format("truetype");
+  src: url("../assets/Now-Thin.otf") format("opentype");
 }
 @media screen and (max-width: 1000px) {
+  html {
+    font-size: 19px;
+  }
   div.container {
     max-width: calc(100% - 100px);
   }
@@ -24,13 +27,19 @@
     justify-content: center;
     text-align: center;
   }
+  img.me {
+    margin-left: 1ch;
+  }
 }
 @media screen and (max-width: 600px) {
+  html {
+    font-size: 18px;
+  }
   div.container {
     width: calc(100% - 100px);
   }
   div.container.title-container .title {
-    font-size: 3rem;
+    font-size: 4rem;
   }
   div.container.title-container .subtitle {
     font-size: 1.2rem;
@@ -39,8 +48,5 @@
   }
   div.container .footer {
     font-size: 1rem;
-  }
-  div.container img.me {
-    width: 135px;
   }
 }/*# sourceMappingURL=mobile.css.map */

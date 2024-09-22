@@ -6,14 +6,15 @@
 @font-face {
   font-family: Now;
   font-weight: normal;
-  src: url("../assets/Now-Thin.otf") format("truetype");
+  src: url("../assets/Now-Thin.otf") format("opentype");
 }
 .container.title-container {
   animation-name: title-fade-in;
 }
 .container.title-container .title {
   font-family: "Antipasto";
-  font-size: 5.5rem;
+  font-weight: normal;
+  font-size: 5rem;
   margin-left: 0.07ch;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -21,9 +22,9 @@
   opacity: 1;
 }
 .container.title-container .subtitle {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   opacity: 0.75;
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
 }
 .container.title-container .links-container {
   margin-top: 2rem;
@@ -32,6 +33,7 @@
   position: relative;
   text-decoration: none;
   margin: 0 1ch;
+  font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
 }

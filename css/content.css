@@ -6,7 +6,7 @@
 @font-face {
   font-family: Now;
   font-weight: normal;
-  src: url("../assets/Now-Thin.otf") format("truetype");
+  src: url("../assets/Now-Thin.otf") format("opentype");
 }
 .container {
   position: absolute;
@@ -16,11 +16,12 @@
   margin: auto;
   width: calc(100% - 150px);
   max-width: 800px;
-  animation: content-fade-in 0.8s cubic-bezier(0.2, 1, 0.4, 1) forwards;
+  animation: content-fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   color: #c0d0d0;
 }
 .container .header {
   font-family: "Antipasto";
+  font-weight: normal;
   font-size: 3em;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -51,11 +52,11 @@
   padding: 2px 20px 20px 10px;
   cursor: pointer;
   opacity: 0.5;
-  transition: all 0.6s cubic-bezier(0.2, 1, 0.4, 1);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .back-button:hover {
   opacity: 1;
-  transition: all 0.8s cubic-bezier(0.2, 1, 0.4, 1);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .back-button .back-arrow {
   margin: 15px auto;
@@ -79,5 +80,5 @@
 img.me {
   margin-top: 0.25rem;
   border-radius: 40%;
-  width: 150px;
+  width: 7.5rem;
 }/*# sourceMappingURL=content.css.map */

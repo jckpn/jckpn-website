@@ -6,16 +6,17 @@
 
     .title {
         font-family: 'Antipasto';
-        font-size: 5.5rem;
+        font-weight: normal;
+        font-size: 5rem;
         margin-left: .07ch;
         user-select: none;
         opacity: $opacity-max;
     }
 
     .subtitle {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         opacity: $opacity-high;
-        margin-top: 0.5rem;
+        margin-top: 0.2rem;
     }
 
     .links-container {
@@ -25,6 +26,7 @@
             position: relative;
             text-decoration: none;
             margin: 0 1ch;
+            font-size: 1.2rem;
             font-weight: bold;
             cursor: pointer;
 

@@ -1,8 +1,11 @@
 $(() => {
-    var mouseX = 50;
-    var mouseY = 50;
+    // reload page properly to get animation
+    var e = performance.getEntriesByType("navigation");
+    if (e.length > 0 && e[0].type === "back_forward") {
+        window.location.reload();
+    }
 
-    updateBG();
+    updateBG(0, 0);
 
     // on move mouse
     $(document).on('mousemove', function (e) {
@@ -12,25 +15,28 @@ $(() => {
         // see if hovering over .links-container element
         hoveringLink = $(e.target).closest('.links-container').length > 0;
 
-        // get mouse x and y as % of window
-        mouseX = e.pageX / $(window).width() * 100;
-        mouseY = e.pageY / $(window).height() * 100;
+        // get mouse x and y as % of window from center
+        mouseX = e.pageX / $(window).width() * 100 - 50;
+        mouseY = e.pageY / $(window).height() * 100 - 50;
 
-        updateBG();
+        updateBG(mouseX, mouseY);
     });
 
-    function updateBG() {
-        const x = mouseX;
-        const y = mouseY;
+    function updateBG(mouseX, mouseY) {
+        x = mouseX * 0.05;
+        y = mouseY * 0.08;
 
-        const d1 = 'M -5,105 L -5,' + (60 + y * 0.1 + x * 0.1)
+        const d1 = 'M -5,105 L -5,' + (70 + x + y)
             + ' C 40,100'
-            + ' ' + (40 + x * 0.1) + ',' + (40 + y * 0.2 - x * 0.1)
+            + ' ' + (40 + x) + ',' + (50 - x + y)
             + ' 105,105 L';
+        
+        x = mouseX * 0.12;
+        y = mouseY * 0.12;
 
-        const d2 = 'M -5,105 L -5,' + (45 + y * 0.1 + x * 0.1)
+        const d2 = 'M -5,105 L -5,' + (55 + x + y)
             + ' C 60,120'
-            + ' ' + (40 + x * 0.1) + ',' + (50 + y * 0.1 - x * 0.1)
+            + ' ' + (40 + x) + ',' + (50 - x + y)
             + ' 105,95 L';
 
         $('#waves-path-1').attr('d', d1);

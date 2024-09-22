@@ -1,3 +1,6 @@
-$('.back-button').click(() => {
-    window.location.href = '/';
+$(() => {
+    // back button functionality
+    $('.back-button').click(() => {
+        window.location.href = '/';
+    });
 });

@@ -1,6 +1,7 @@
 // COLORS
 $color-bg: #111;
 $color-fg: #c0d0d0;
+$color-accent: #42c9ff;
 
 
 // OPACITY
@@ -20,12 +21,12 @@ $opacity-low: .25;
 @font-face {
     font-family: Now;
     font-weight: normal;
-    src: url('../assets/Now-Thin.otf') format('truetype');
+    src: url('../assets/Now-Thin.otf') format('opentype');
 }
 
 
 // ANIMATIONS
-$anim-curve: cubic-bezier(.2, 1, .4, 1); // snappy ease-out
+$anim-curve: cubic-bezier(0.16, 1, 0.3, 1); // easeOutExpo
 $anim-dur-long: .8s;
 $anim-dur-med: .6s;
 $anim-dur-short: .4s;

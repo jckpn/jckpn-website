@@ -6,7 +6,7 @@
 @font-face {
   font-family: Now;
   font-weight: normal;
-  src: url("../assets/Now-Thin.otf") format("truetype");
+  src: url("../assets/Now-Thin.otf") format("opentype");
 }
 html {
   font-size: 20px;
@@ -14,6 +14,7 @@ html {
 
 body {
   font-family: "Now";
+  font-weight: bold;
   background: #111;
   color: #c0d0d0;
   margin: 0;
@@ -23,28 +24,42 @@ body {
 
 a {
   position: relative;
-  color: #c0d0d0;
-  opacity: 0.5;
+  color: #42c9ff;
+  opacity: 0.75;
   font-weight: bold;
   text-decoration: none;
-  transition: all 0.4s cubic-bezier(0.2, 1, 0.4, 1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 a::after {
+  content: " .";
+  -webkit-mask-image: url("../assets/link.svg");
+          mask-image: url("../assets/link.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  background-color: #42c9ff;
+  margin-left: 2px;
+  margin-right: -2px;
+}
+a::before {
   content: "";
-  background-color: #c0d0d0;
+  background-color: #42c9ff;
   position: absolute;
   height: 1px;
   bottom: 0;
-  opacity: 0.75;
-  transition: all 0.4s cubic-bezier(0.2, 1, 0.4, 1);
-  left: 0;
-  width: 100%;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  left: 50%;
+  width: 0;
+  opacity: 0;
 }
 a:hover {
   opacity: 1;
 }
-a:hover::after {
+a:hover::before {
   opacity: 1;
+  left: 0;
+  width: 100%;
 }
 
 .footer {
@@ -57,5 +72,5 @@ a:hover::after {
   opacity: 0.25;
   font-size: 0.75rem;
   text-align: right;
-  transition: all 0.6s cubic-bezier(0.2, 1, 0.4, 1);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }/*# sourceMappingURL=base.css.map */

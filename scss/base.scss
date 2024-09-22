@@ -7,6 +7,7 @@ html {
 
 body {
     font-family: 'Now';
+    font-weight: bold;
     background: $color-bg;
     color: $color-fg;
     margin: 0;
@@ -16,31 +17,44 @@ body {
 
 a {
     position: relative; // required for hover underline to work properly
-    color: $color-fg;
-    opacity: $opacity-med;
+    color: $color-accent;
+    opacity: $opacity-high;
     font-weight: bold;
     text-decoration: none;
 
     transition: all $anim-dur-short $anim-curve;
 
     &::after {
+        content: ' .';
+        mask-image: url('../assets/link.svg');
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        background-color: $color-accent;
+        margin-left: 2px;
+        margin-right: -2px;
+
+    }
+
+    &::before {
         content: '';
-        background-color: $color-fg;
+        background-color: $color-accent;
         position: absolute;
         height: 1px;
         bottom: 0;
-        opacity: $opacity-high;
 
         transition: all $anim-dur-short $anim-curve;
-        left: 0;
-        width: 100%;
+        left: 50%;
+        width: 0;
+        opacity: 0;
     }
 
     &:hover {
         opacity: $opacity-max;
 
-        &::after {
+        &::before {
             opacity: $opacity-max;
+            left: 0;
+            width: 100%;
         }
     }
 }
