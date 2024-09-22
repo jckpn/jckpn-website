@@ -31,7 +31,9 @@ a {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 a::after {
-  content: " .";
+  content: "..";
+  font-size: 0.9rem;
+  vertical-align: top;
   -webkit-mask-image: url("../assets/link.svg");
           mask-image: url("../assets/link.svg");
   -webkit-mask-size: contain;

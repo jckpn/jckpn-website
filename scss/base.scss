@@ -25,7 +25,9 @@ a {
     transition: all $anim-dur-short $anim-curve;
 
     &::after {
-        content: ' .';
+        content: '..';
+        font-size: .9rem;
+        vertical-align: top;
         mask-image: url('../assets/link.svg');
         mask-size: contain;
         mask-repeat: no-repeat;
