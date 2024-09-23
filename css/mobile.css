@@ -12,20 +12,11 @@
   html {
     font-size: 19px;
   }
-  div.container {
-    max-width: calc(100% - 100px);
-  }
   div.container .back-button {
     left: -20px;
   }
   div.container .header {
     margin-left: 50px;
-  }
-  div.container.title-container {
-    width: 100%;
-    max-width: 100%;
-    justify-content: center;
-    text-align: center;
   }
   img.me {
     margin-left: 1ch;
@@ -35,16 +26,20 @@
   html {
     font-size: 18px;
   }
-  div.container {
-    width: calc(100% - 100px);
-  }
   div.container.title-container .title {
     font-size: 4rem;
   }
   div.container.title-container .subtitle {
-    font-size: 1.2rem;
     width: 250px;
     margin: 10px auto;
+  }
+  div.container.title-container .links-container {
+    width: 300px;
+    margin: 1rem auto;
+  }
+  div.container.title-container .links-container a {
+    display: inline-block;
+    padding-top: 1rem;
   }
   div.container .footer {
     font-size: 1rem;

@@ -50,12 +50,12 @@ a {
     }
 
     &:hover {
-        opacity: $opacity-max;
+        opacity: $opacity-high;
 
         &::before {
-            opacity: $opacity-max;
+            opacity: $opacity-high;
             left: 0;
-            width: 100%;
+            width: calc(100% - .5rem);
         }
     }
 }

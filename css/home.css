@@ -10,6 +10,8 @@
 }
 .container.title-container {
   animation-name: title-fade-in;
+  width: 100%;
+  text-align: center;
 }
 .container.title-container .title {
   font-family: "Antipasto";
@@ -23,8 +25,8 @@
 }
 .container.title-container .subtitle {
   font-size: 1.2rem;
-  opacity: 0.75;
-  margin-top: 0.2rem;
+  opacity: 0.7;
+  margin-top: 0.4rem;
 }
 .container.title-container .links-container {
   margin-top: 2rem;
@@ -33,7 +35,7 @@
   position: relative;
   text-decoration: none;
   margin: 0 1ch;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
 }

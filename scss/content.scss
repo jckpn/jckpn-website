@@ -7,8 +7,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     margin: auto;
-    width: calc(100% - 150px);
-    max-width: 800px;
+    width: 800px;
+    max-width: calc(100% - 100px);
     animation: content-fade-in $anim-dur-long $anim-curve forwards;
     color: $color-fg;
 
@@ -16,11 +16,11 @@
         font-family: 'Antipasto';
         font-weight: normal;
         font-size: 3em;
-        opacity: $opacity-max;
+        opacity: $opacity-high;
     }
 
     p {
-        color: rgba($color-fg, $opacity-high);
+        color: rgba($color-fg, $opacity-med);
     }
 }
 
@@ -49,7 +49,7 @@
     transition: all $anim-dur-med $anim-curve;
 
     &:hover {
-        opacity: $opacity-max;
+        opacity: $opacity-high;
         transition: all $anim-dur-long $anim-curve;
     }
 
