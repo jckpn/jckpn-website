@@ -15,7 +15,7 @@ html {
 body {
   font-family: "Now";
   font-weight: bold;
-  background: #111;
+  background: #141516;
   color: #c0d0d0;
   margin: 0;
   padding: 0;
@@ -25,23 +25,10 @@ body {
 a {
   position: relative;
   color: #12a9bf;
-  opacity: 1;
+  opacity: 0.7;
   font-weight: bold;
   text-decoration: none;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-a::after {
-  content: "..";
-  font-size: 90%;
-  -webkit-mask-image: url("../assets/link.svg");
-          mask-image: url("../assets/link.svg");
-  -webkit-mask-size: contain;
-          mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-  background-color: #12a9bf;
-  margin-left: 2px;
-  margin-right: -2px;
 }
 a::before {
   content: "";
@@ -60,7 +47,7 @@ a:hover {
 a:hover::before {
   opacity: 1;
   left: 0;
-  width: calc(100% - 0.5rem);
+  width: 100%;
 }
 
 .footer {

@@ -18,23 +18,23 @@ body {
 a {
     position: relative; // required for hover underline to work properly
     color: $color-accent;
-    opacity: $opacity-high;
+    opacity: $opacity-med;
     font-weight: bold;
     text-decoration: none;
 
     transition: all $anim-dur-short $anim-curve;
 
-    &::after {
-        content: '..';
-        font-size: 90%;
-        mask-image: url('../assets/link.svg');
-        mask-size: contain;
-        mask-repeat: no-repeat;
-        background-color: $color-accent;
-        margin-left: 2px;
-        margin-right: -2px;
+    // &::after {
+    //     content: '_';
+    //     font-size: 90%;
+    //     mask-image: url('../assets/link.svg');
+    //     mask-size: contain;
+    //     mask-repeat: no-repeat;
+    //     background-color: $color-accent;
+    //     margin-left: 2px;
+    //     margin-right: -2px;
 
-    }
+    // }
 
     &::before {
         content: '';
@@ -55,7 +55,7 @@ a {
         &::before {
             opacity: $opacity-high;
             left: 0;
-            width: calc(100% - .5rem);
+            width: 100%;
         }
     }
 }
