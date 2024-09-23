@@ -27,6 +27,8 @@
     }
 
     div.container {
+        max-width: calc(100% - 50px);
+        
         &.title-container {
             .title {
                 font-size: 4rem;
