@@ -36,27 +36,29 @@ a {
 
     // }
 
-    &::before {
-        content: '';
-        background-color: $color-accent;
-        position: absolute;
-        height: 1px;
-        bottom: 0;
+    // &::before {
+    //     content: '';
+    //     background-color: $color-accent;
+    //     position: absolute;
+    //     height: 1px;
+    //     bottom: 0;
 
-        transition: all $anim-dur-short $anim-curve;
-        left: 50%;
-        width: 0;
-        opacity: 0;
-    }
+    //     transition: all $anim-dur-short $anim-curve;
+    //     left: 50%;
+    //     width: 0;
+    //     opacity: 0;
+    // }
 
     &:hover {
         opacity: $opacity-high;
 
-        &::before {
-            opacity: $opacity-high;
-            left: 0;
-            width: 100%;
-        }
+        text-decoration: underline 1px;
+
+        // &::before {
+        //     opacity: $opacity-high;
+        //     left: 0;
+        //     width: 100%;
+        // }
     }
 }
 

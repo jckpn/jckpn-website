@@ -33,11 +33,8 @@
 }
 .container.title-container .links-container a {
   position: relative;
-  text-decoration: none;
   margin: 0 1ch;
   font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
 }
 
 @keyframes title-fade-in {

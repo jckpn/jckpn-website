@@ -15,10 +15,6 @@
             margin-left: 50px;
         }
     }
-
-    img.me {
-        margin-left: 1ch;
-    }
 }
 
 @media screen and (max-width: 600px) {
@@ -53,5 +49,15 @@
         .footer {
             font-size: 1rem;
         }
+    }
+
+    img.me {
+        margin-left: 1ch;
+    }
+
+    // show link hover styles by default
+    a {
+        opacity: $opacity-high;
+        text-decoration: underline;
     }
 }

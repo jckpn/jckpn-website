@@ -26,17 +26,8 @@
 
         a {
             position: relative;
-            text-decoration: none;
             margin: 0 1ch;
             font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-
-            // &::before {
-            //     font-size: 80%;
-            //     margin-right: .5ch;
-            //     content: '>';
-            // }
         }
     }
 }

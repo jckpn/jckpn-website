@@ -30,24 +30,10 @@ a {
   text-decoration: none;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-a::before {
-  content: "";
-  background-color: #12a9bf;
-  position: absolute;
-  height: 1px;
-  bottom: 0;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  left: 50%;
-  width: 0;
-  opacity: 0;
-}
 a:hover {
   opacity: 1;
-}
-a:hover::before {
-  opacity: 1;
-  left: 0;
-  width: 100%;
+  -webkit-text-decoration: underline 1px;
+          text-decoration: underline 1px;
 }
 
 .footer {
