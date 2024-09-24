@@ -16,9 +16,8 @@ body {
 }
 
 a {
-    position: relative; // required for hover underline to work properly
     color: $color-accent;
-    opacity: $opacity-med;
+    // opacity: $opacity-med;
     font-weight: bold;
     text-decoration: none;
 
@@ -33,7 +32,6 @@ a {
     //     background-color: $color-accent;
     //     margin-left: 2px;
     //     margin-right: -2px;
-
     // }
 
     // &::before {
@@ -60,6 +58,18 @@ a {
         //     width: 100%;
         // }
     }
+}
+
+span.link-icon {
+    display: inline-block;
+    mask-image: url('../assets/external-link.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    background-color: $color-accent;
+    margin-left: .2ex;
+    margin-bottom: .4ex;
+    width: .7em; // 70% of font size
+    height: .7em;
 }
 
 .footer {
