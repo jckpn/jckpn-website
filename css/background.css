@@ -25,23 +25,28 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  stroke-width: 3px;
+  stroke-width: 4px;
   fill: none;
 }
 .background svg path {
   transition: d;
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation: waves-breath ease-in-out infinite alternate;
   filter: drop-shadow(0 0 3px rgba(192, 208, 208, 0.8));
+  transform-origin: 50% 50%;
 }
 .background svg path#waves-path-1 {
   opacity: 0.4;
   stroke: #a0d0f0;
   transition-duration: 1s;
+  animation-duration: 6s;
 }
 .background svg path#waves-path-2 {
   opacity: 0.4;
   stroke: #d0f0d0;
-  transition-duration: 2s;
+  transition-duration: 3s;
+  animation-duration: 5s;
+  animation-delay: -2s;
 }
 .background::after {
   content: "";
@@ -53,6 +58,14 @@
   background: linear-gradient(90deg, #141516, transparent, #141516);
 }
 
+@keyframes waves-breath {
+  0% {
+    transform: rotate(0deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(5deg) scale(1);
+  }
+}
 @keyframes shoot-down {
   0% {
     bottom: 65%;
