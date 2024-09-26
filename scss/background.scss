@@ -23,14 +23,14 @@
         width: 100%;
         height: 100%;
 
-        stroke-width: 4px;
+        stroke-width: 3px;
         fill: none;
 
         path {
             transition: d;
             transition-timing-function: $anim-curve;
             animation: waves-breath ease-in-out infinite alternate;
-            filter: drop-shadow(0 0 3px rgba($color-fg, 0.8));
+            // filter: drop-shadow(0 0 3px rgba($color-fg, 0.8));
             transform-origin: 50% 50%;
 
             &#waves-path-1 {
