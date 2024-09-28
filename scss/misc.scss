@@ -1,0 +1,93 @@
+@import 'utils';
+
+
+html {
+    font-size: 20px; // set 1rem
+}
+
+body {
+    font-family: 'Now';
+    font-weight: bold;
+    background: $color-bg;
+    color: $color-fg;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+a {
+    color: $color-accent;
+    // opacity: $opacity-med;
+    font-weight: bold;
+    text-decoration: none;
+
+    transition: all $anim-dur-short $anim-curve;
+
+    &:hover {
+        opacity: $opacity-high;
+
+        text-decoration: underline 1px;
+    }
+}
+
+span.link-icon {
+    display: inline-block;
+    mask-image: url('../assets/external-link.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    background-color: $color-accent;
+    margin-left: .2ex;
+    margin-bottom: .4ex;
+    width: .7em; // 70% of font size
+    height: .7em;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $color-fg;
+
+    padding-bottom: 15px;
+    opacity: $opacity-low;
+    font-size: .75rem;
+    text-align: right;
+    transition: all $anim-dur-med $anim-curve;
+}
+
+
+.container>* {
+    animation-name: slide-in;
+    animation-duration: $anim-dur-med;
+    animation-timing-function: $anim-curve;
+    animation-fill-mode: both;
+
+    // animation-delay: .1s;
+
+    // &.title, &.header, &.back-button {
+    //     animation-name: none;
+    //     animation-delay: 0s;
+    // }
+
+    // &.links-container {
+    //     animation-delay: .2s;
+    // }
+
+    &:nth-child(1) {
+        animation: none;
+    }
+
+    @for $i from 1 through 9 {
+        &:nth-child(#{$i+1}) {
+            animation-delay: $i * .1s;
+        }
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
