@@ -40,7 +40,7 @@ body {
     }
 }
 
-a {
+body > .container a {
     color: $color-accent;
     // opacity: $opacity-med;
     font-weight: bold;

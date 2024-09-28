@@ -71,14 +71,14 @@ body {
   transform: translateY(-100px);
 }
 
-a {
+body > .container a {
   color: #12a9bf;
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-a:hover {
+body > .container a:hover {
   opacity: 1;
   -webkit-text-decoration: underline 1px;
           text-decoration: underline 1px;
