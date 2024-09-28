@@ -19,7 +19,7 @@ body {
 .container {
     @for $i from 1 through 9 {
         :nth-child(#{$i}) {
-            transition: all $anim-dur-med $anim-curve;
+            transition: all $anim-dur-short $anim-curve;
             transition-delay: $i * .1s;
         }
     }
@@ -31,6 +31,7 @@ body {
         & > * {
             opacity: 0 !important;
             transform: translateY(100px); // content slides up
+            transition: none; // disappear instantly (anim just for fade in)
         }
 
         &.title-container > * {
@@ -44,6 +45,7 @@ a {
     // opacity: $opacity-med;
     font-weight: bold;
     text-decoration: none;
+    cursor: pointer;
 
     transition: all $anim-dur-short $anim-curve;
 
