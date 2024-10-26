@@ -28,19 +28,19 @@ body {
         opacity: 0;
         pointer-events: none;
 
-        & > * {
+        &>* {
             opacity: 0 !important;
             transform: translateY(100px); // content slides up
             transition: none; // disappear instantly (anim just for fade in)
         }
 
-        &.title-container > * {
+        &.title-container>* {
             transform: translateY(-100px); // home page slides down
         }
     }
 }
 
-body > .container a {
+body>.container a {
     color: $color-accent;
     // opacity: $opacity-med;
     font-weight: bold;
@@ -54,18 +54,6 @@ body > .container a {
 
         text-decoration: underline 1px;
     }
-}
-
-span.link-icon {
-    display: inline-block;
-    mask-image: url('../assets/external-link.svg');
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    background-color: $color-accent;
-    margin-left: .2ex;
-    margin-bottom: .4ex;
-    width: .7em; // 70% of font size
-    height: .7em;
 }
 
 .footer {

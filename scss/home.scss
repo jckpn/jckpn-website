@@ -3,8 +3,10 @@
 
 .container.title-container {
     animation-name: title-fade-in;
-    width: 100%;
+    width: 800px;
+    max-width: 100%;
     text-align: center;
+
 
     .title {
         font-family: 'Antipasto';
@@ -22,7 +24,10 @@
     }
 
     .links-container {
-        margin-top: 2rem;
+        line-height: 2em;
+        // width: 400px;
+        max-width: 100%;
+        margin: 2em auto;
 
         a {
             position: relative;
@@ -31,6 +36,7 @@
         }
     }
 }
+
 
 @keyframes title-fade-in {
     from {
@@ -41,4 +47,18 @@
     to {
         opacity: 1;
     }
+}
+
+
+.link-icon::after {
+    content: '';
+    display: inline-block;
+    mask-image: url('../assets/external-link.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    background-color: $color-accent;
+    margin-left: .2ex;
+    margin-bottom: .4ex;
+    width: .7em; // 70% of font size
+    height: .7em;
 }
