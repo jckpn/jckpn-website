@@ -1,0 +1,32 @@
+// COLORS
+$color-bg: #141516;
+$color-fg: #c0d0d0;
+$color-accent: #12a9bf;
+
+
+// OPACITY
+$opacity-high: 1;
+$opacity-med: .7;
+$opacity-low: .4;
+
+
+// FONTS
+@font-face {
+    font-family: Antipasto;
+    font-weight: normal;
+    src: url('../assets/antipasto-light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Now;
+    font-weight: normal;
+    src: url('../assets/Now-Thin.otf') format('opentype');
+}
+
+
+// ANIMATIONS
+$anim-curve: cubic-bezier(0.16, 1, 0.3, 1); // easeOutExpo
+$anim-dur-extra-long: 1.6s;
+$anim-dur-long: .8s;
+$anim-dur-med: .6s;
+$anim-dur-short: .4s;
