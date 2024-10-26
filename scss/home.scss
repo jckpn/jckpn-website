@@ -1,0 +1,44 @@
+@import 'utils';
+
+
+.container.title-container {
+    animation-name: title-fade-in;
+    width: 100%;
+    text-align: center;
+
+    .title {
+        font-family: 'Antipasto';
+        font-weight: normal;
+        font-size: 5rem;
+        margin-left: .07ch;
+        user-select: none;
+        opacity: $opacity-high;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        opacity: $opacity-med;
+        margin-top: 0.4rem;
+    }
+
+    .links-container {
+        margin-top: 2rem;
+
+        a {
+            position: relative;
+            margin: 0 1ch;
+            font-size: 1.1rem;
+        }
+    }
+}
+
+@keyframes title-fade-in {
+    from {
+        opacity: 0;
+        top: 40%;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,70 @@
+@font-face {
+  font-family: Antipasto;
+  font-weight: normal;
+  src: url("../assets/antipasto-light.ttf") format("truetype");
+}
+@font-face {
+  font-family: Now;
+  font-weight: normal;
+  src: url("../assets/Now-Thin.otf") format("opentype");
+}
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  width: 800px;
+  max-width: calc(100% - 100px);
+  color: #c0d0d0;
+}
+.container .header {
+  font-family: "Antipasto";
+  font-weight: normal;
+  font-size: 3em;
+  opacity: 1;
+}
+.container p {
+  color: rgba(192, 208, 208, 0.7);
+}
+
+.back-button {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: -80px;
+  top: -6px;
+  transform: scale(67%);
+  padding: 2px 20px 20px 10px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.back-button:hover {
+  opacity: 1;
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.back-button .back-arrow {
+  margin: 15px auto;
+  width: 25px;
+  height: 25px;
+  border-top: 3px solid #c0d0d0;
+  border-left: 3px solid #c0d0d0;
+  transform: rotate(-45deg);
+}
+.back-button .back-arrow::after {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 45px;
+  background-color: #c0d0d0;
+  transform: rotate(-45deg) translate(15px, 4px);
+  left: 0;
+  top: 0;
+}
+
+img.me {
+  margin-top: 0.25rem;
+  border-radius: 40%;
+  width: 7.5rem;
+}/*# sourceMappingURL=content.css.map */
