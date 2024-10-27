@@ -1,0 +1,66 @@
+@font-face {
+  font-family: Antipasto;
+  font-weight: normal;
+  src: url("../assets/antipasto-light.ttf") format("truetype");
+}
+@font-face {
+  font-family: Now;
+  font-weight: normal;
+  src: url("../assets/Now-Thin.otf") format("opentype");
+}
+.container.title-container {
+  animation-name: title-fade-in;
+  width: 800px;
+  max-width: 100%;
+  text-align: center;
+}
+.container.title-container .title {
+  font-family: "Antipasto";
+  font-weight: normal;
+  font-size: 5rem;
+  margin-left: 0.07ch;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  opacity: 1;
+}
+.container.title-container .subtitle {
+  font-size: 1.2rem;
+  opacity: 0.7;
+  margin-top: 0.4rem;
+}
+.container.title-container .links-container {
+  line-height: 2em;
+  max-width: 100%;
+  margin: 2em auto;
+}
+.container.title-container .links-container a {
+  position: relative;
+  margin: 0 1ch;
+  font-size: 1.1rem;
+}
+
+@keyframes title-fade-in {
+  from {
+    opacity: 0;
+    top: 40%;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.link-icon::after {
+  content: "";
+  display: inline-block;
+  -webkit-mask-image: url("../assets/external-link.svg");
+          mask-image: url("../assets/external-link.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  background-color: #12a9bf;
+  margin-left: 0.2ex;
+  margin-bottom: 0.4ex;
+  width: 0.7em;
+  height: 0.7em;
+}/*# sourceMappingURL=home.css.map */

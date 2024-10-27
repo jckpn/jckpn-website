@@ -1,0 +1,41 @@
+@font-face {
+  font-family: Antipasto;
+  font-weight: normal;
+  src: url("../assets/antipasto-light.ttf") format("truetype");
+}
+@font-face {
+  font-family: Now;
+  font-weight: normal;
+  src: url("../assets/Now-Thin.otf") format("truetype");
+}
+.title-container .title {
+  font-family: "Antipasto";
+  font-size: 5.5rem;
+  margin-left: 0.07ch;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  opacity: 1;
+}
+.title-container .subtitle {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+.title-container .links-container {
+  margin-top: 2rem;
+}
+.title-container .links-container a {
+  text-decoration: none;
+  margin: 0 1ch;
+  font-weight: bold;
+  letter-spacing: 0.08ch;
+  cursor: pointer;
+}
+.title-container .links-container a::before, .title-container .links-container a::after {
+  font-size: 80%;
+  margin-right: 0.5ch;
+}
+.title-container .links-container a::before {
+  content: ">";
+}/*# sourceMappingURL=title.css.map */
