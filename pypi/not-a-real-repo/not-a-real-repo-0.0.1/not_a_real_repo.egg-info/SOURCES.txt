@@ -1,0 +1,7 @@
+main.py
+pyproject.toml
+setup.py
+not_a_real_repo.egg-info/PKG-INFO
+not_a_real_repo.egg-info/SOURCES.txt
+not_a_real_repo.egg-info/dependency_links.txt
+not_a_real_repo.egg-info/top_level.txt
