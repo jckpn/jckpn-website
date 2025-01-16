@@ -17,6 +17,7 @@ $(() => {
     });
 
     function updateBG(mouseX, mouseY) {
+        // update SVG lines with mouse movement
         var x = mouseX * 0.02;
         var y = mouseY * 0.05;
         const d1 = 'M -5,105 L -5,' + (70 + x + y)
