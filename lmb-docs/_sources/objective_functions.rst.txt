@@ -1,0 +1,7 @@
+Objective Functions
+=======================================================
+
+.. automodule:: lmblocks.utils.objective_functions
+   :members:
+   :member-order: bysource
+   :inherited-members:

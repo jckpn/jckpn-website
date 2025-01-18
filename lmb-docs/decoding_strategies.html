@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Decoding Strategies &#8212; lmblocks  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=686e5160" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/jquery.js?v=5d32c60e"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Blocks" href="blocks.html" />
+    <link rel="prev" title="Models" href="models.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="decoding-strategies">
+<h1>Decoding Strategies<a class="headerlink" href="#decoding-strategies" title="Link to this heading"></a></h1>
+<section id="module-lmblocks.decoding_strategies.local_strategies">
+<span id="local-decoding-strategies"></span><h2>Local Decoding Strategies<a class="headerlink" href="#module-lmblocks.decoding_strategies.local_strategies" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="lmblocks.decoding_strategies.local_strategies.GreedySearch">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GreedySearch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stop_criteria_</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmblocks.decoding_strategies.local_strategies.GreedySearch" title="Link to this definition"></a></dt>
+<dd><p>Greedy search decoding strategy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stop_criteria_</strong> (<em>StopCriterion</em><em> | </em><em>None</em>) – Stop criterion for the decoding strategy. If <cite>None</cite>, the strategy will run for a single step.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lmblocks.decoding_strategies.local_strategies.RandomSampling">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RandomSampling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stop_criteria_</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmblocks.decoding_strategies.local_strategies.RandomSampling" title="Link to this definition"></a></dt>
+<dd><p>Random sampling decoding strategy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stop_criteria_</strong> (<em>StopCriterion</em><em> | </em><em>None</em>) – Stop criterion for the decoding strategy. If <cite>None</cite>, the strategy will run for a single step.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lmblocks.decoding_strategies.local_strategies.RandomSamplingWithFilters">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RandomSamplingWithFilters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_criteria_</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmblocks.decoding_strategies.local_strategies.RandomSamplingWithFilters" title="Link to this definition"></a></dt>
+<dd><p>Random sampling decoding strategy with filters applied to logits.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>temperature</strong> (<em>float</em>) – Temperature to apply to logits.</p></li>
+<li><p><strong>top_p</strong> (<em>float</em>) – Top-p filter to apply to logits.</p></li>
+<li><p><strong>top_k</strong> (<em>int</em>) – Top-k filter to apply to logits.</p></li>
+<li><p><strong>stop_criteria_</strong> (<em>StopCriterion</em><em> | </em><em>None</em>) – Stop criterion for the decoding strategy. If <cite>None</cite>, the strategy will run for a single step.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lmblocks.decoding_strategies.local_strategies.TemperatureSampling">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TemperatureSampling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_criteria_</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmblocks.decoding_strategies.local_strategies.TemperatureSampling" title="Link to this definition"></a></dt>
+<dd><p>Temperature sampling decoding strategy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>temperature</strong> (<em>float</em>) – Temperature to apply to logits.</p></li>
+<li><p><strong>stop_criteria_</strong> (<em>StopCriterion</em><em> | </em><em>None</em>) – Stop criterion for the decoding strategy. If <cite>None</cite>, the strategy will run for a single step.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lmblocks.decoding_strategies.local_strategies.TopPSampling">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TopPSampling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_criteria_</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmblocks.decoding_strategies.local_strategies.TopPSampling" title="Link to this definition"></a></dt>
+<dd><p>Top-p sampling decoding strategy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<em>float</em>) – The probability mass to sample from.</p></li>
+<li><p><strong>stop_criteria_</strong> (<em>StopCriterion</em><em> | </em><em>None</em>) – Stop criterion for the decoding strategy. If <cite>None</cite>, the strategy will run for a single step.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lmblocks.decoding_strategies.local_strategies.TopKSampling">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TopKSampling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_criteria_</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmblocks.decoding_strategies.local_strategies.TopKSampling" title="Link to this definition"></a></dt>
+<dd><p>Top-k sampling decoding strategy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>int</em>) – The number of tokens to sample from.</p></li>
+<li><p><strong>stop_criteria_</strong> (<em>StopCriterion</em><em> | </em><em>None</em>) – Stop criterion for the decoding strategy. If <cite>None</cite>, the strategy will run for a single step.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-lmblocks.decoding_strategies.global_strategies">
+<span id="global-decoding-strategies"></span><h2>Global Decoding Strategies<a class="headerlink" href="#module-lmblocks.decoding_strategies.global_strategies" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="lmblocks.decoding_strategies.global_strategies.BestOfN">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BestOfN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_criteria_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">objective_function=&lt;lmblocks.utils.objective_functions.JointLogProbs</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inner_call=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmblocks.decoding_strategies.global_strategies.BestOfN" title="Link to this definition"></a></dt>
+<dd><p>Generates <em>N</em> sequences and keeps the best one according to the
+objective function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – Number of sequences to keep.</p></li>
+<li><p><strong>stop_criteria_</strong> (<em>StopCriterion</em>) – Stop criterion for the decoding strategy. If <cite>None</cite>, the strategy will run for a single step.</p></li>
+<li><p><strong>objective_function</strong> (<em>ObjectiveFunction</em>) – Objective function to use for scoring sequences.</p></li>
+<li><p><strong>inner_call</strong> (<em>DecodingStrategy</em>) – Inner decoding strategy to use for generating sequences.
+Defaults to <cite>RandomSampling</cite> with the same stop criterion.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lmblocks.decoding_strategies.global_strategies.BeamSearch">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BeamSearch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_beams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_criteria_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">objective_function=&lt;lmblocks.utils.objective_functions.JointLogProbs</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmblocks.decoding_strategies.global_strategies.BeamSearch" title="Link to this definition"></a></dt>
+<dd><p>Beam search decoding strategy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_beams</strong> (<em>int</em>) – Number of beams to keep.</p></li>
+<li><p><strong>stop_criteria_</strong> (<em>StopCriterion</em>) – Stop criterion for the decoding strategy. If <cite>None</cite>, the strategy will run for a single step.</p></li>
+<li><p><strong>objective_function</strong> (<em>ObjectiveFunction</em>) – Objective function to use for scoring sequences.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lmblocks.decoding_strategies.global_strategies.BiasedTPS">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BiasedTPS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">steps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_criteria_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta=1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">objective_function=&lt;lmblocks.utils.objective_functions.JointLogProbs</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inner_call=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmblocks.decoding_strategies.global_strategies.BiasedTPS" title="Link to this definition"></a></dt>
+<dd><p>Biased TPS (transition path sampling) decoding strategy. Somewhat similar to
+the Metropolis-Hastings algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>steps</strong> (<em>int</em>) – Number of repeats of the TPS step.</p></li>
+<li><p><strong>stop_criteria_</strong> (<em>StopCriterion</em>) – Stop criterion for the decoding strategy. If <cite>None</cite>, the strategy will run for a single step.</p></li>
+<li><p><strong>beta</strong> (<em>float</em>) – The beta hyperparameter for the acceptance ratio (see <cite>ProbabilisticSequenceAccepter</cite>).</p></li>
+<li><p><strong>objective_function</strong> (<em>ObjectiveFunction</em>) – Objective function to use for scoring sequences.</p></li>
+<li><p><strong>inner_call</strong> (<em>DecodingStrategy</em>) – Inner decoding strategy to use for generating sequences. Defaults to
+<cite>RandomSampling</cite> with the same stop criterion.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">lmblocks</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate.html">Text and Sequence Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Decoding Strategies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-lmblocks.decoding_strategies.local_strategies">Local Decoding Strategies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lmblocks.decoding_strategies.local_strategies.GreedySearch"><code class="docutils literal notranslate"><span class="pre">GreedySearch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lmblocks.decoding_strategies.local_strategies.RandomSampling"><code class="docutils literal notranslate"><span class="pre">RandomSampling</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lmblocks.decoding_strategies.local_strategies.RandomSamplingWithFilters"><code class="docutils literal notranslate"><span class="pre">RandomSamplingWithFilters</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lmblocks.decoding_strategies.local_strategies.TemperatureSampling"><code class="docutils literal notranslate"><span class="pre">TemperatureSampling</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lmblocks.decoding_strategies.local_strategies.TopPSampling"><code class="docutils literal notranslate"><span class="pre">TopPSampling</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lmblocks.decoding_strategies.local_strategies.TopKSampling"><code class="docutils literal notranslate"><span class="pre">TopKSampling</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-lmblocks.decoding_strategies.global_strategies">Global Decoding Strategies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lmblocks.decoding_strategies.global_strategies.BestOfN"><code class="docutils literal notranslate"><span class="pre">BestOfN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lmblocks.decoding_strategies.global_strategies.BeamSearch"><code class="docutils literal notranslate"><span class="pre">BeamSearch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lmblocks.decoding_strategies.global_strategies.BiasedTPS"><code class="docutils literal notranslate"><span class="pre">BiasedTPS</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="blocks.html">Blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stop_criteria.html">Stop Criteria</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objective_functions.html">Objective Functions</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="models.html" title="previous chapter">Models</a></li>
+      <li>Next: <a href="blocks.html" title="next chapter">Blocks</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Jack Paine, Ed Gillman, Jake Dorman & Jamie Mair.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.1.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/decoding_strategies.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

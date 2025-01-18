@@ -1,0 +1,13 @@
+LMBlocks Documentation
+=======================================================
+
+.. toctree::
+   :maxdepth: 3
+
+   quickstart
+   generate
+   models
+   decoding_strategies
+   blocks
+   stop_criteria
+   objective_functions

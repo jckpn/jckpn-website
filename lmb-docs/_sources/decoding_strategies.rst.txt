@@ -1,0 +1,16 @@
+Decoding Strategies
+=======================================================
+
+Local Decoding Strategies
+-------------------------------------------------------
+
+.. automodule:: lmblocks.decoding_strategies.local_strategies
+   :members:
+   :member-order: bysource
+
+Global Decoding Strategies
+-------------------------------------------------------
+
+.. automodule:: lmblocks.decoding_strategies.global_strategies
+   :members:
+   :member-order: bysource

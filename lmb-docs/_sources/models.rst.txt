@@ -1,0 +1,19 @@
+Models
+=======================================================
+
+Base
+-------------------------------------------------------
+
+.. automodule:: lmblocks.models.base
+   :members:
+   :member-order: bysource
+   :inherited-members:
+
+
+HuggingFace
+-------------------------------------------------------
+
+.. automodule:: lmblocks.models.hf
+   :members:
+   :member-order: bysource
+   :inherited-members:
