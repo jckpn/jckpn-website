@@ -1,7 +1,0 @@
-Stop Criteria
-=======================================================
-
-.. automodule:: lmblocks.stop_criteria
-   :members:
-   :member-order: bysource
-   :inherited-members:

@@ -1,4 +1,0 @@
-Text and Sequence Generation
-=======================================================
-
-.. autofunction:: lmblocks.generate.generate
